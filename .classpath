@@ -12,5 +12,6 @@
 	<classpathentry kind="lib" path="WEB-INF/lib/jdom-2.0.5.jar"/>
 	<classpathentry kind="lib" path="WEB-INF/lib/postgresql-9.3-1101.jdbc4.jar"/>
 	<classpathentry kind="lib" path="Z:/VM-Shared/tp5-3/WEB-INF/lib/jdom-1.1.3.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/jdom-1.1.3.jar"/>
 	<classpathentry kind="output" path="WEB-INF/classes"/>
 </classpath>
