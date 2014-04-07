@@ -46,14 +46,14 @@ public class AjoutEquipe extends HttpServlet {
 			HttpServletResponse response) throws ServletException, IOException {
 		
 		try {
-			if (request.getParameter("nomEquipe") == null)
+			if (request.getParameter("nomEquipe") == null || request.getParameter("nomEquipe").isEmpty())
 				throw new LigueBaseballException("Impossible de creer une equipe sans nom d'equipe");
 			else{
 				String nomEquipe = request.getParameter("nomEquipe");
-				if(request.getParameter("terrainEquipe") == null)
+				if(request.getParameter("terrainEquipe") == null || request.getParameter("terrainEquipe").isEmpty())
 					GestionLigueBaseball.gestionEquipe.ajout(nomEquipe);
 				else{
-					if(request.getParameter("adresseTerrainEquipe") == null){
+					if(request.getParameter("adresseTerrainEquipe") == null || request.getParameter("adresseTerrainEquipe").isEmpty()){
 						throw new LigueBaseballException("Impossible de mettre un terrain sans adresse: seul le nom d'equipe sera pris en compte.");
 					}
 					else{
