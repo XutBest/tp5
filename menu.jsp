@@ -23,9 +23,4 @@ CONTENT="page d'accueil Gestion de baseball">
 </FORM>
 <%-- inclusion d'une autre page pour l'affichage des messages d'erreur--%>
 <jsp:include page="/WEB-INF/messageErreur.jsp" />
-<BR>
-<%-- Appel du servlet Logout pour revenir au menu login--%>
-<BR>
-Date et heure : <%= DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, Locale.CANADA_FRENCH).format(new java.util.Date()) %>
-</BODY>
-</HTML>
+<%@ include file="/WEB-INF/jspf/footer.jspf" %> 
