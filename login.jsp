@@ -3,7 +3,7 @@
 
 		<FORM ACTION="Login" METHOD="POST" role="form">
 			<BR> User Id Oracle : <INPUT TYPE="TEXT" NAME="userIdBD" VALUE="postgres" >
-		    Mot de passe Oracle : <INPUT TYPE="TEXT" NAME="motDePasseBD" VALUE="superstar"><BR>
+		    Mot de passe Oracle : <INPUT TYPE="TEXT" NAME="motDePasseBD" VALUE=""><BR>
 		    Serveur : <SELECT NAME="serveur">
 		                <OPTION VALUE="postgres">postgres
 		              </SELECT>

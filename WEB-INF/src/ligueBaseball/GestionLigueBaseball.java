@@ -33,8 +33,7 @@ public GestionLigueBaseball(String serveur,String adresseIP, String bd, String u
   throws LigueBaseballException, SQLException
 {
 // allocation des objets pour le traitement des transactions
-cx = new Connexion("postgres", "postgres", "postgres", "superstar");
-//cx = new Connexion(serveur, bd, user, password);
+cx = new Connexion(serveur, bd, user, password);
 
 equipe = new Equipe(cx);
 terrain = new Terrain(cx);
