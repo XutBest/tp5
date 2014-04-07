@@ -7,5 +7,5 @@
     <updateXml>true</updateXml>
     <warLocation></warLocation>
     <extraInfo></extraInfo>
-    <webPath>/tp5</webPath>
+    <webPath>/tp5-3</webPath>
 </tomcatProjectProperties>

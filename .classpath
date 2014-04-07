@@ -6,10 +6,11 @@
 	<classpathentry kind="var" path="TOMCAT_HOME/lib/jsp-api.jar"/>
 	<classpathentry kind="var" path="TOMCAT_HOME/lib/el-api.jar"/>
 	<classpathentry kind="var" path="TOMCAT_HOME/lib/annotations-api.jar"/>
-	<classpathentry kind="lib" path="WEB-INF/lib/jdom-2.0.5.jar"/>
-	<classpathentry kind="lib" path="WEB-INF/lib/postgresql-9.3-1101.jdbc4.jar"/>
 	<classpathentry kind="lib" path="WEB-INF/lib/xerces.jar"/>
 	<classpathentry kind="src" path="WEB-INF/src"/>
 	<classpathentry kind="src" output="work" path="work"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/jdom-2.0.5.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/postgresql-9.3-1101.jdbc4.jar"/>
+	<classpathentry kind="lib" path="Z:/VM-Shared/tp5-3/WEB-INF/lib/jdom-1.1.3.jar"/>
 	<classpathentry kind="output" path="WEB-INF/classes"/>
 </classpath>
