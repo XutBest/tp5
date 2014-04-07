@@ -14,7 +14,13 @@ import javax.sql.rowset.spi.XmlReader;
 
 import org.jdom2.*;
 import org.jdom2.input.*;
+import org.jdom2.output.*;
 
+/*
+import org.jdom.*;
+import org.jdom.input.*;
+import org.jdom.output.*;
+*/
 
 /**
  *  * @author Mathieu Lavoie, Alex Provencher et Vincent Gagnon
@@ -37,7 +43,7 @@ public class GestionEquipe {
 	}
 
 	
-	public void exportXml(String equipeNom) throws SQLException
+	public void exportXml(String equipeNom) throws SQLException, IOException
 	{
 		//Nous allons commencer notre arborescence en créant la racine XML 
 		Element racine = new Element("equipe");
@@ -46,7 +52,7 @@ public class GestionEquipe {
 		creeArbre(document, equipeNom);
 	}
 	
-	private void creeArbre(Document document,String equipe) throws SQLException
+	private void creeArbre(Document document,String equipe) throws SQLException, IOException
 	{
 		Element racine = document.getRootElement();
 		Element Equipe = new Element("equipe");
@@ -74,6 +80,9 @@ public class GestionEquipe {
 		}
 		
 		//shoot out xml
+		XMLOutputter output = new XMLOutputter();
+		output.setFormat(Format.getPrettyFormat());
+		output.output(document, new FileWriter("c:\\"));
 	}
 	
 	
@@ -96,7 +105,8 @@ public class GestionEquipe {
 			
 			Element joueurs = racine.getChild("joueurs");
 			
-			for(Element j : joueurs.getChildren())
+			List<Element> listJoueurs = joueurs.getChildren();
+			for(Element j : listJoueurs)
 			{
 				String nom = j.getAttribute("nom").getValue();
 				String prenom = j.getAttribute("prenom").getValue();
