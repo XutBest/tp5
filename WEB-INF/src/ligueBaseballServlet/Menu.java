@@ -43,7 +43,7 @@ public class Menu extends HttpServlet {
 					.getRequestDispatcher("/ajoutequipe.jsp");
 			dispatcher.forward(request, response);
 		}
-		else if(request.getParameter("") != null){
+		else if(request.getParameter("showTeams") != null){
 			RequestDispatcher dispatcher = request
 					.getRequestDispatcher("/afficherequipes.jsp");
 			dispatcher.forward(request, response);

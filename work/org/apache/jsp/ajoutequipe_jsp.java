@@ -75,7 +75,7 @@ public final class ajoutequipe_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("</FORM>\r\n");
       out.write("</CENTER>\r\n");
       out.write("<BR>\r\n");
-      out.write("<a href=\"Menu\">Retour au menu</a>\r\n");
+      out.write("<a href=\"Login\">Retour au menu</a>\r\n");
       out.write("<BR>\r\n");
       out.write("Date et heure :\r\n");
       out.write("</BODY>\r\n");

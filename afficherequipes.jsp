@@ -10,19 +10,9 @@
 <CENTER>
 <H1>Gestion de baseball</H1>
 <BR>
-<FORM ACTION="AjoutEquipe" METHOD="POST">
-1.Nom de l'equipe (obligatoire) : <INPUT TYPE="TEXT" NAME="nomEquipe"
-  VALUE="">
-<BR>
-2.Terrain de l'equipe : <INPUT TYPE="TEXT" NAME="terrainEquipe"
-  VALUE="">
-<BR>
-3.Adresse de l'equipe (obligatoire avec 2) : <INPUT TYPE="TEXT" NAME="adresseTerrainEquipe"
-  VALUE="">
+<%= (new ligueBaseball.GestionLigueBaseball("postgres", "localhost", "postgres", "postgres", "superstar")).gestionEquipe.getEquipes()%>
 <BR>
 <BR>
-<INPUT TYPE="SUBMIT" NAME="creerEquipe"VALUE="CreerEquipe">
-</FORM>
 </CENTER>
 <BR>
 <a href="Login">Retour au menu</a>

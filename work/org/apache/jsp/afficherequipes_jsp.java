@@ -3,10 +3,8 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
-import java.util.*;
-import java.text.*;
 
-public final class menu_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class afficherequipes_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -42,7 +40,7 @@ public final class menu_jsp extends org.apache.jasper.runtime.HttpJspBase
 
 
     try {
-      response.setContentType("text/html; charset=ISO-8859-1");
+      response.setContentType("text/html");
       pageContext = _jspxFactory.getPageContext(this, request, response,
       			null, true, 8192, true);
       _jspx_page_context = pageContext;
@@ -52,35 +50,27 @@ public final class menu_jsp extends org.apache.jasper.runtime.HttpJspBase
       out = pageContext.getOut();
       _jspx_out = out;
 
-      out.write("\r\n");
       out.write("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">\r\n");
       out.write("<HTML>\r\n");
       out.write("<HEAD>\r\n");
       out.write("<TITLE>Gestion de baseball</TITLE>\r\n");
       out.write("<META HTTP-EQUIV=\"Content-Type\" CONTENT=\"text/html; charset=ISO-8859-1\">\r\n");
-      out.write("<META NAME=\"author\" CONTENT=\"Mathieu Lavoie\">\r\n");
-      out.write("<META NAME=\"description\"\r\n");
-      out.write("CONTENT=\"page d'accueil Gestion de baseball\">\r\n");
+      out.write("<META NAME=\"author\" CONTENT=\"Marc Frappier\">\r\n");
+      out.write("<META NAME=\"description\" CONTENT=\"page d'accueil Gestion de baseball\">\r\n");
       out.write("</HEAD>\r\n");
       out.write("<BODY>\r\n");
-      out.write("<FORM ACTION=\"Menu\" METHOD=\"POST\" role=\"form\">\r\n");
       out.write("<CENTER>\r\n");
       out.write("<H1>Gestion de baseball</H1>\r\n");
-      out.write("<INPUT TYPE=\"SUBMIT\" NAME=\"addTeam\" VALUE=\"Creer Equipe\" class=\"btn btn-default\" >\r\n");
       out.write("<BR>\r\n");
-      out.write("<INPUT TYPE=\"SUBMIT\" NAME=\"showTeams\" VALUE=\"Afficher Equipes\" class=\"btn btn-default\" >\r\n");
+      out.print( (new ligueBaseball.GestionLigueBaseball("postgres", "localhost", "postgres", "postgres", "superstar")).gestionEquipe.getEquipes());
+      out.write("\r\n");
+      out.write("<BR>\r\n");
+      out.write("<BR>\r\n");
       out.write("</CENTER>\r\n");
-      out.write("</FORM>\r\n");
-      out.write('\r');
-      out.write('\n');
-      org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "/WEB-INF/messageErreur.jsp", out, false);
-      out.write("\r\n");
       out.write("<BR>\r\n");
-      out.write("\r\n");
+      out.write("<a href=\"Login\">Retour au menu</a>\r\n");
       out.write("<BR>\r\n");
-      out.write("Date et heure : ");
-      out.print( DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, Locale.CANADA_FRENCH).format(new java.util.Date()) );
-      out.write("\r\n");
+      out.write("Date et heure :\r\n");
       out.write("</BODY>\r\n");
       out.write("</HTML>");
     } catch (Throwable t) {

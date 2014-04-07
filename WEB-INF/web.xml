@@ -38,9 +38,13 @@
     <servlet-name>AjoutEquipe</servlet-name>
     <servlet-class>ligueBaseballServlet.AjoutEquipe</servlet-class>
   </servlet>
-    <servlet>
+  <servlet>
     <servlet-name>Menu</servlet-name>
     <servlet-class>ligueBaseballServlet.Menu</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SupprimerEquipe</servlet-name>
+    <servlet-class>ligueBaseballServlet.SupprimerEquipe</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>Login</servlet-name>
@@ -62,9 +66,14 @@
     <url-pattern>/AjoutEquipe</url-pattern>
     <url-pattern>/ajoutequipe</url-pattern>
   </servlet-mapping>
-    <servlet-mapping>
+  <servlet-mapping>
     <servlet-name>Menu</servlet-name>
     <url-pattern>/Menu</url-pattern>
     <url-pattern>/menu</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SupprimerEquipe</servlet-name>
+    <url-pattern>/SupprimerEquipe</url-pattern>
+    <url-pattern>/supprimerequipe</url-pattern>
   </servlet-mapping>
 </web-app>
