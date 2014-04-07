@@ -10,12 +10,12 @@
 <CENTER>
 <H1>Gestion de baseball</H1>
 <BR>
-<FORM ACTION="AjoutEquipe" METHOD="POST">
+<FORM ACTION="ExportXml" METHOD="POST">
 1.Nom de l'equipe (obligatoire) : <INPUT TYPE="TEXT" NAME="nomEquipe"
   VALUE="">
 <BR>
 <BR>
-<INPUT TYPE="SUBMIT" NAME="creerEquipe"VALUE="CreerEquipe">
+<INPUT TYPE="SUBMIT" NAME="submitXml"VALUE="CreerEquipe">
 </FORM>
 </CENTER>
 <BR>
