@@ -47,7 +47,7 @@ public class Equipe {
 				"select max(equipeid) from equipe");
 		stmtToXml =  cx.getConnection().prepareStatement(
 				"select j.joueurnom,j.joueurprenom,f.numero,f.datedebut from equipe e, faitpartie f, joueur j where e.equipeid = f.equipeid and j.joueurid = f.joueurid and e.equipenom = ?");
-		stmtGetTerrain = cx.getConnection().prepareStatement("select terrainnom,terrainadresse from terrain t, equipe e where t.terrainid=e.terrainid and e.equipeid and e.equipenom = ?");
+		stmtGetTerrain = cx.getConnection().prepareStatement("select terrainnom,terrainadresse from terrain t, equipe e where t.terrainid=e.terrainid and e.equipenom = ?");
 	}
 	
 	public List<TupleJoueur> equipeXML(String equipeNom) throws SQLException {
