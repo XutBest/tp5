@@ -39,10 +39,10 @@ public class SupprimerEquipe extends HttpServlet {
 		// invalide");
 		//doPost(request, response);
 		if (request.getParameter("supprimerEquipe") != null)
-			traiterCreerEquipe(request, response);
+			traiterSupprimerEquipe(request, response);
 	}
 	
-	public void traiterCreerEquipe(HttpServletRequest request,
+	public void traiterSupprimerEquipe(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		
 		try {
