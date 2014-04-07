@@ -25,18 +25,6 @@ public class Menu extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		doGet(request, response);
-/*		System.out.println("Hey tu a réussi");
-		
-		//HttpSession session = request.getSession();
-		
-		
-		
-		String nom = request.getParameter("nomEquipeCreer");
-		String terrain = request.getParameter("terrainCreer");
-		String adresse = request.getParameter("adresseCreer");
-		
-		System.out.println(nom+" " + terrain + " " + adresse);*/
-		
 
 	}
 
@@ -50,27 +38,15 @@ public class Menu extends HttpServlet {
 		// response.sendError(response.SC_INTERNAL_SERVER_ERROR, "Acc�s
 		// invalide");
 		//doPost(request, response);
-		if (request.getParameter("creerEquipe") != null)
-			traiterCreerEquipe(request, response);
-	}
-	
-	public void traiterCreerEquipe(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
-		
-		try {
-			if (request.getParameter("nomEquipeCreer") == null)
-				throw new LigueBaseballException("Impossible de creer une equipe sans nom d'equipe");
-			else{
-				String nomEquipe = request.getParameter("nomEquipeCreer");
-					GestionLigueBaseball.gestionEquipe.ajout(nomEquipe);
-					RequestDispatcher dispatcher = request
-							.getRequestDispatcher("/menu.jsp");
-					dispatcher.forward(request, response);
-			}
-		} catch (LigueBaseballException e) {
-			
-		} catch (Exception e) {
-		
+		if(request.getParameter("addTeam") != null){
+			RequestDispatcher dispatcher = request
+					.getRequestDispatcher("/ajoutequipe.jsp");
+			dispatcher.forward(request, response);
+		}
+		else if(request.getParameter("") != null){
+			RequestDispatcher dispatcher = request
+					.getRequestDispatcher("/afficherequipes.jsp");
+			dispatcher.forward(request, response);
 		}
 	}
 
