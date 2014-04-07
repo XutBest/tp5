@@ -15,11 +15,4 @@
 
 %>
 <BR>
-<BR>
-</CENTER>
-<BR>
-<a href="Login">Retour au menu</a>
-<BR>
-Date et heure :
-</BODY>
-</HTML>
+<%@ include file="/WEB-INF/jspf/footer.jspf" %> 
