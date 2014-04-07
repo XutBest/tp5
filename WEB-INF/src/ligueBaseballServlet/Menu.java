@@ -53,6 +53,11 @@ public class Menu extends HttpServlet {
 					.getRequestDispatcher("/supprimerequipe.jsp");
 			dispatcher.forward(request, response);
 		}
+		else if(request.getParameter("exportXml") != null){
+			RequestDispatcher dispatcher = request
+					.getRequestDispatcher("/exportxml.jsp");
+			dispatcher.forward(request, response);
+		}
 	}
 
 } // class
