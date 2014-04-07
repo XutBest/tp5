@@ -1,0 +1,10 @@
+		<!-- Site footer -->
+	    <div class="footer">
+		    <%-- Appel du servlet Logout pour revenir au menu login--%>
+			<a href="Logout">Sortir</a>	    
+    		<p class="text-right">&copy; Ligue de baseball 2014</p>
+	    	   	
+	    </div>
+		
+	</BODY>
+</HTML>

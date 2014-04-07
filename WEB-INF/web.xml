@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.2//EN" "http://java.sun.com/j2ee/dtds/web-app_2_2.dtd">
+<web-app id="test-baseball">
+  <display-name>Système de gestion de ligue baseball</display-name>
+  <context-param>
+    <param-name>hey?</param-name>
+    <param-value>valeurDeExempleParam1</param-value>
+  </context-param>
+  <context-param>
+    <param-name>Wtf does this shit?</param-name>
+    <param-value>valeurDeExempleParam2</param-value>
+  </context-param>
+  <listener>
+    <listener-class>ligueBaseballServlet.BaseballSessionListener</listener-class>
+    <listener-class>ligueBaseballServlet.BaseballContextListener</listener-class>
+  </listener>
+  <servlet>
+    <servlet-name>Login</servlet-name>
+    <servlet-class>ligueBaseballServlet.Login</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>Test</servlet-name>
+    <servlet-class>ligueBaseballServlet.Test</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>Logout</servlet-name>
+    <servlet-class>ligueBaseballServlet.Logout</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SelectionMembre</servlet-name>
+    <servlet-class>ligueBaseballServlet.SelectionMembre</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ListePretMembre</servlet-name>
+    <servlet-class>ligueBaseballServlet.ListePretMembre</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>Menu</servlet-name>
+    <servlet-class>ligueBaseballServlet.Menu</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AjoutEquipe</servlet-name>
+    <servlet-class>ligueBaseballServlet.AjoutEquipe</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Login</servlet-name>
+    <url-pattern>/Login</url-pattern>
+   	<url-pattern>/login</url-pattern>
+    <!--  <url-pattern>/</url-pattern>-->
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Test</servlet-name>
+    <url-pattern>/Test</url-pattern>
+  	<url-pattern>/test</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Logout</servlet-name>
+    <url-pattern>/Logout</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Menu</servlet-name>
+    <url-pattern>/Menu</url-pattern>
+    <url-pattern>/menu</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AjoutEquipe</servlet-name>
+    <url-pattern>/AjoutEquipe</url-pattern>
+    <url-pattern>/ajoutequipe</url-pattern>
+  </servlet-mapping>
+</web-app>
