@@ -82,7 +82,7 @@ public class GestionEquipe {
 		//shoot out xml
 		XMLOutputter output = new XMLOutputter();
 		output.setFormat(Format.getPrettyFormat());
-		output.output(document, new FileWriter("c:\\"));
+		output.output(document, new FileWriter("c:\\" + equipe + ".xml"));
 	}
 	
 	
