@@ -54,14 +54,16 @@ public class GestionEquipe {
 	
 	private void creeArbre(Document document,String equipe) throws SQLException, IOException
 	{
-		Element racine = document.getRootElement();
-		Element Equipe = new Element("equipe");
+		//Element racine = document.getRootElement();
+		Element Equipe = document.getRootElement();//new Element("equipe");
 		Equipe.setAttribute(new Attribute("nom",equipe));
 		
 		Element Terrain = new Element("terrain");
 		Terrain.setAttribute(new Attribute("nom",this.equipe.getTerrainNom(equipe)));
 		Terrain.setAttribute(new Attribute("adresse",this.equipe.getTerrainAdresse(equipe)));
 		Element Joueurs = new Element("Joueurs");
+		
+		Equipe.addContent(Terrain);
 		
 		List<TupleJoueur> lj = this.equipe.equipeXML(equipe);
 		
@@ -70,7 +72,7 @@ public class GestionEquipe {
 			Element e = new Element("joueur");
 			Attribute nom = new Attribute("nom",j.Nom);
 			Attribute prenom =new Attribute("prenom", j.Prenom);
-			Attribute numero =new Attribute("nuemro", Integer.toString(j.Numero));
+			Attribute numero =new Attribute("numero", Integer.toString(j.Numero));
 			Attribute dateDebut =new Attribute("dateDebut", j.DateDebut.toString());
 			e.setAttribute(nom);
 			e.setAttribute(prenom);
@@ -78,7 +80,7 @@ public class GestionEquipe {
 			e.setAttribute(dateDebut);
 			Joueurs.addContent(e);
 		}
-		
+		Equipe.addContent(Joueurs);
 		//shoot out xml
 		XMLOutputter output = new XMLOutputter();
 		output.setFormat(Format.getPrettyFormat());
