@@ -48,6 +48,11 @@ public class Menu extends HttpServlet {
 					.getRequestDispatcher("/afficherequipes.jsp");
 			dispatcher.forward(request, response);
 		}
+		else if(request.getParameter("deleteTeam") != null){
+			RequestDispatcher dispatcher = request
+					.getRequestDispatcher("/supprimerequipe.jsp");
+			dispatcher.forward(request, response);
+		}
 	}
 
 } // class
