@@ -63,7 +63,7 @@ public class AjoutEquipe extends HttpServlet {
 					}
 						
 					RequestDispatcher dispatcher = request
-							.getRequestDispatcher("/login.jsp");
+							.getRequestDispatcher("/menu.jsp");
 					dispatcher.forward(request, response);
 			}
 		} catch (LigueBaseballException e) {

@@ -10,7 +10,10 @@
 <CENTER>
 <H1>Gestion de baseball</H1>
 <BR>
-<%= (new ligueBaseball.GestionLigueBaseball("postgres", "localhost", "postgres", "postgres", "superstar")).gestionEquipe.getEquipes()%>
+<%= GestionLigueBaseball ligueBaseball = (GestionLigueBaseball) session.getAttribute("baseball");
+	ligueBaseball.gestionEquipe.getEquipes();
+
+%>
 <BR>
 <BR>
 </CENTER>
