@@ -10,15 +10,16 @@
 <CENTER>
 <H1>Gestion de baseball</H1>
 <BR>
-<FORM ACTION="SupprimerEquipe" METHOD="POST">
+<FORM ACTION="AjoutEquipe" METHOD="POST">
 1.Nom de l'equipe (obligatoire) : <INPUT TYPE="TEXT" NAME="nomEquipe"
   VALUE="">
 <BR>
-<INPUT TYPE="SUBMIT" NAME="supprimerEquipe"VALUE="Supprimer Equipe">
+<BR>
+<INPUT TYPE="SUBMIT" NAME="creerEquipe"VALUE="CreerEquipe">
 </FORM>
 </CENTER>
 <BR>
-<a href="Menu">Retour au menu</a>
+<a href="Login">Retour au menu</a>
 <BR>
 Date et heure :
 </BODY>

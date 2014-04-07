@@ -17,6 +17,8 @@ CONTENT="page d'accueil Gestion de baseball">
 <INPUT TYPE="SUBMIT" NAME="showTeams" VALUE="Afficher Equipes" class="btn btn-default" >
 <BR>
 <INPUT TYPE="SUBMIT" NAME="deleteTeam" VALUE="Supprimer Equipe" class="btn btn-default" >
+<BR>
+<INPUT TYPE="SUBMIT" NAME="exportXml" VALUE="Exporter Equipe XML" class="btn btn-default" >
 </CENTER>
 </FORM>
 <%-- inclusion d'une autre page pour l'affichage des messages d'erreur--%>

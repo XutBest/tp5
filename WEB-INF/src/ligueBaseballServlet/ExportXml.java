@@ -1,4 +1,4 @@
-﻿package ligueBaseballServlet;
+package ligueBaseballServlet;
 
 import java.io.IOException;
 
@@ -20,7 +20,7 @@ import ligueBaseball.LigueBaseballException;
  */
 
 @SuppressWarnings("serial")
-public class AjoutEquipe extends HttpServlet {
+public class ExportXml extends HttpServlet {
 	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -59,12 +59,11 @@ public class AjoutEquipe extends HttpServlet {
 					else{
 						String nomTerrain = request.getParameter("terrainEquipe");
 						String adresseTerrain = request.getParameter("adresseTerrainEquipe");
-						GestionLigueBaseball.gestionEquipe.ajout(nomEquipe, nomTerrain,adresseTerrain);
+						GestionLigueBaseball.gestionEquipe.ajout(nomEquipe, nomTerrain, adresseTerrain);
 					}
-						
 				}
 				RequestDispatcher dispatcher = request
-						.getRequestDispatcher("/menu.jsp");
+						.getRequestDispatcher("/login.jsp");
 				dispatcher.forward(request, response);
 			}
 		} catch (LigueBaseballException e) {
