@@ -20,7 +20,7 @@ import ligueBaseball.LigueBaseballException;
  */
 
 @SuppressWarnings("serial")
-public class AjoutEquipe extends HttpServlet {
+public class ExportXml extends HttpServlet {
 	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {

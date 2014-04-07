@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.2//EN" "http://java.sun.com/j2ee/dtds/web-app_2_2.dtd">
 <web-app id="test-baseball">
-  <display-name>Système de gestion de ligue baseball</display-name>
+  <display-name>Systeme de gestion de ligue baseball</display-name>
   <context-param>
     <param-name>hey?</param-name>
     <param-value>valeurDeExempleParam1</param-value>
@@ -46,6 +46,10 @@
     <servlet-name>SupprimerEquipe</servlet-name>
     <servlet-class>ligueBaseballServlet.SupprimerEquipe</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>ExportXml</servlet-name>
+    <servlet-class>ligueBaseballServlet.ExportXml</servlet-class>
+  </servlet>
   <servlet-mapping>
     <servlet-name>Login</servlet-name>
     <url-pattern>/Login</url-pattern>
@@ -75,5 +79,10 @@
     <servlet-name>SupprimerEquipe</servlet-name>
     <url-pattern>/SupprimerEquipe</url-pattern>
     <url-pattern>/supprimerequipe</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ExportXml</servlet-name>
+    <url-pattern>/ExportXml</url-pattern>
+    <url-pattern>/exportxml</url-pattern>
   </servlet-mapping>
 </web-app>

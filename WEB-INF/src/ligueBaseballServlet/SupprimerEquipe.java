@@ -51,6 +51,9 @@ public class SupprimerEquipe extends HttpServlet {
 			else{
 				String nomEquipe = request.getParameter("nomEquipe");
 				GestionLigueBaseball.gestionEquipe.supprimer(nomEquipe);
+				RequestDispatcher dispatcher = request
+						.getRequestDispatcher("/menu.jsp");
+				dispatcher.forward(request, response);
 			}
 		} catch (LigueBaseballException e) {
 			
