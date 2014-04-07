@@ -10,13 +10,9 @@
 <CENTER>
 <H1>Gestion de baseball</H1>
 <BR>
-<%= (new ligueBaseball.GestionLigueBaseball("postgres", "localhost", "postgres", "postgres", "superstar")).gestionEquipe.getEquipes()%>
+<%= GestionLigueBaseball ligueBaseball = (GestionLigueBaseball) session.getAttribute("baseball");
+	ligueBaseball.gestionEquipe.getEquipes();
+
+%>
 <BR>
-<BR>
-</CENTER>
-<BR>
-<a href="Login">Retour au menu</a>
-<BR>
-Date et heure :
-</BODY>
-</HTML>
+<%@ include file="/WEB-INF/jspf/footer.jspf" %> 

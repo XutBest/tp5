@@ -1,4 +1,4 @@
-﻿package ligueBaseballServlet;
+package ligueBaseballServlet;
 
 import java.io.IOException;
 
@@ -20,7 +20,7 @@ import ligueBaseball.LigueBaseballException;
  */
 
 @SuppressWarnings("serial")
-public class AjoutEquipe extends HttpServlet {
+public class ExportXml extends HttpServlet {
 	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -38,7 +38,7 @@ public class AjoutEquipe extends HttpServlet {
 		// response.sendError(response.SC_INTERNAL_SERVER_ERROR, "Acc�s
 		// invalide");
 		//doPost(request, response);
-		if (request.getParameter("creerEquipe") != null)
+		if (request.getParameter("submitXml") != null)
 			traiterCreerEquipe(request, response);
 	}
 	
@@ -50,21 +50,9 @@ public class AjoutEquipe extends HttpServlet {
 				throw new LigueBaseballException("Impossible de creer une equipe sans nom d'equipe");
 			else{
 				String nomEquipe = request.getParameter("nomEquipe");
-				if(request.getParameter("terrainEquipe") == null)
-					GestionLigueBaseball.gestionEquipe.ajout(nomEquipe);
-				else{
-					if(request.getParameter("adresseTerrainEquipe") == null){
-						throw new LigueBaseballException("Impossible de mettre un terrain sans adresse: seul le nom d'equipe sera pris en compte.");
-					}
-					else{
-						String nomTerrain = request.getParameter("terrainEquipe");
-						String adresseTerrain = request.getParameter("adresseTerrainEquipe");
-						GestionLigueBaseball.gestionEquipe.ajout(nomEquipe, nomTerrain,adresseTerrain);
-					}
-						
-				}
+				GestionLigueBaseball.gestionEquipe.exportXml(nomEquipe);
 				RequestDispatcher dispatcher = request
-						.getRequestDispatcher("/menu.jsp");
+						.getRequestDispatcher("/login.jsp");
 				dispatcher.forward(request, response);
 			}
 		} catch (LigueBaseballException e) {
