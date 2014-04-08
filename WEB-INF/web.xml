@@ -44,7 +44,7 @@
   </servlet>
   <servlet>
     <servlet-name>CreerJoueur</servlet-name>
-    <servlet-class>ligueBaseballServlet.SupprimerEquipe</servlet-class>
+    <servlet-class>ligueBaseballServlet.CreerJoueur</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>AfficherJoueur</servlet-name>
