@@ -119,7 +119,7 @@ public class Joueur {
 		ResultSet rset = stmtGetEquipeId.executeQuery();
 		int equipeId;
 		if (rset.next()) {
-			equipeId = rset.getInt(0);
+			equipeId = rset.getInt(1);
 		} else {
 			throw new LigueBaseballException("Equipe inexistante");
 		}

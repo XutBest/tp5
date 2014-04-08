@@ -61,7 +61,7 @@ public class GestionEquipe {
 		Element Terrain = new Element("terrain");
 		Terrain.setAttribute(new Attribute("nom",this.equipe.getTerrainNom(equipe)));
 		Terrain.setAttribute(new Attribute("adresse",this.equipe.getTerrainAdresse(equipe)));
-		Element Joueurs = new Element("Joueurs");
+		Element Joueurs = new Element("joueurs");
 		
 		Equipe.addContent(Terrain);
 		
@@ -93,19 +93,18 @@ public class GestionEquipe {
 		SAXBuilder sb = new SAXBuilder();
 		try
 		{
-			Document document = sb.build(new File(path));
-			Element racine = document.getRootElement();
-			Element equipe = racine.getChild("equipe");
-			Element terrain = racine.getChild("terrain");
-			
+			Document document = sb.build(new File("C:\\" + path));
+			Element equipe = document.getRootElement();
 			String equipeNom = equipe.getAttributeValue("nom");
+			Element terrain = equipe.getChild("terrain");
+			
 			String terrainNom = terrain.getAttributeValue("nom");
 			String adresse = terrain.getAttributeValue("adresse");
 			//add in bd team and terrain
 			
 			ajout(equipeNom,terrainNom,adresse);
 			
-			Element joueurs = racine.getChild("joueurs");
+			Element joueurs = equipe.getChild("joueurs");
 			
 			List<Element> listJoueurs = joueurs.getChildren();
 			for(Element j : listJoueurs)
