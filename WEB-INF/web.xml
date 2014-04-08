@@ -51,6 +51,42 @@
     <servlet-class>ligueBaseballServlet.SupprimerEquipe</servlet-class>
   </servlet>
   <servlet>
+    <servlet-name>CreerJoueur</servlet-name>
+    <servlet-class>ligueBaseballServlet.SupprimerEquipe</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AfficherJoueur</servlet-name>
+    <servlet-class>ligueBaseballServlet.SupprimerEquipe</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SupprimerJoueur</servlet-name>
+    <servlet-class>ligueBaseballServlet.SupprimerEquipe</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CreerMatch</servlet-name>
+    <servlet-class>ligueBaseballServlet.SupprimerEquipe</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CreerArbitre</servlet-name>
+    <servlet-class>ligueBaseballServlet.SupprimerEquipe</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AfficherArbitre</servlet-name>
+    <servlet-class>ligueBaseballServlet.SupprimerEquipe</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ArbitrerMatch</servlet-name>
+    <servlet-class>ligueBaseballServlet.SupprimerEquipe</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>EntrerResultat</servlet-name>
+    <servlet-class>ligueBaseballServlet.SupprimerEquipe</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AfficherResultats</servlet-name>
+    <servlet-class>ligueBaseballServlet.SupprimerEquipe</servlet-class>
+  </servlet>
+  <servlet>
     <servlet-name>ExportXml</servlet-name>
     <servlet-class>ligueBaseballServlet.ExportXml</servlet-class>
   </servlet>
@@ -91,7 +127,52 @@
   <servlet-mapping>
     <servlet-name>SupprimerEquipe</servlet-name>
     <url-pattern>/SupprimerEquipe</url-pattern>
-    <url-pattern>/supprimerequipe</url-pattern>
+    <url-pattern>/supprimerEquipe</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CreerJoueur</servlet-name>
+    <url-pattern>/CreerJoueur</url-pattern>
+    <url-pattern>/creerJoueur</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AfficherJoueur</servlet-name>
+    <url-pattern>/AfficherJoueur</url-pattern>
+    <url-pattern>/afficherJoueur</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SupprimerJoueur</servlet-name>
+    <url-pattern>/SupprimerJoueur</url-pattern>
+    <url-pattern>/supprimerJoueur</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CreerMatch</servlet-name>
+    <url-pattern>/CreerMatch</url-pattern>
+    <url-pattern>/creerMatch</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CreerArbitre</servlet-name>
+    <url-pattern>/CreerArbitre</url-pattern>
+    <url-pattern>/creerArbitre</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AfficherArbitre</servlet-name>
+    <url-pattern>/AfficherArbitre</url-pattern>
+    <url-pattern>/afficherArbitre</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ArbitrerMatch</servlet-name>
+    <url-pattern>/ArbitrerMatch</url-pattern>
+    <url-pattern>/arbitrerMatch</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>EntrerResultat</servlet-name>
+    <url-pattern>/EntrerResultat</url-pattern>
+    <url-pattern>/entrerResultat</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AfficherResultats</servlet-name>
+    <url-pattern>/AfficherResultats</url-pattern>
+    <url-pattern>/afficherResultats</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>ExportXml</servlet-name>

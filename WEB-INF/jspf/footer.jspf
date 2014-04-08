@@ -1,8 +1,8 @@
 		<!-- Site footer -->
 	    <div class="footer">
 		    <%-- Appel du servlet Logout pour revenir au menu login--%>
-			<a href="Logout">Sortir</a>
-			<a href="Menu">Menu</a>	    
+			<a href="Logout" class ="btn btn-danger">Sortir</a>
+			<a href="Menu" class ="btn btn-success">Menu</a>	    
     		<p class="text-right">&copy; Ligue de baseball 2014</p>
 	    	 
 	    </div>

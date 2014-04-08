@@ -45,11 +45,15 @@ public class GestionEquipe {
 	
 	public void exportXml(String equipeNom) throws SQLException, IOException
 	{
-		//Nous allons commencer notre arborescence en créant la racine XML 
+		//Nous allons commencer notre arborescence en créant la racine XML
+		System.out.println("THIS SHIT IS avant element");
 		Element racine = new Element("equipe");
+		System.out.println("THIS SHIT IS element");
 		//On crée un nouveau Document JDOM basé sur la racine 
 		Document document = new Document(racine);
+		System.out.println("THIS SHIT IS document");
 		creeArbre(document, equipeNom);
+		System.out.println("THIS SHIT IS creerArbre");
 	}
 	
 	private void creeArbre(Document document,String equipe) throws SQLException, IOException

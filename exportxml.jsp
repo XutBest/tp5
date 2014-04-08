@@ -1,8 +1,7 @@
 <%@ include file="/WEB-INF/jspf/header.jspf" %> 
 <BR>
 <FORM ACTION="ExportXml" METHOD="POST">
-1.Path : <INPUT TYPE="TEXT" NAME="path"
-  VALUE="">
+1.Path : <INPUT TYPE="TEXT" name="path" value="">
 <BR>
 <BR>
 <INPUT TYPE="SUBMIT" NAME="submitXml"VALUE="Importer XML">

@@ -38,6 +38,10 @@ public class SupprimerEquipe extends HttpServlet {
 		// response.sendError(response.SC_INTERNAL_SERVER_ERROR, "Acc�s
 		// invalide");
 		//doPost(request, response);
+		RequestDispatcher dispatcher =
+				  request.getRequestDispatcher("/supprimerequipe.jsp");
+		dispatcher.forward(request, response);
+
 		if (request.getParameter("supprimerEquipe") != null)
 			traiterSupprimerEquipe(request, response);
 	}

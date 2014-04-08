@@ -24,8 +24,11 @@ public class ExportXml extends HttpServlet {
 	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		doGet(request, response);
 
+		
+		if (request.getParameter("submitXml") != null){
+			traiterCreerEquipe(request, response);
+		}
 	}
 
 	// Dans les formulaire, on utilise la m�thode POST
@@ -40,24 +43,28 @@ public class ExportXml extends HttpServlet {
 		//doPost(request, response);
 		RequestDispatcher dispatcher =
 				  request.getRequestDispatcher("/exportxml.jsp");
-				dispatcher.forward(request, response);
+		dispatcher.forward(request, response);
 
-		if (request.getParameter("submitXml") != null)
-			traiterCreerEquipe(request, response);
 	}
 	
 	public void traiterCreerEquipe(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		
+		System.out.println("THIS SHIT IS not yet WORKING");
+
 		try {
-			if (request.getParameter("nomEquipe") == null)
+			if (request.getParameter("path") == null)
 				throw new LigueBaseballException("Impossible de creer une equipe sans nom d'equipe");
 			else{
-				String nomEquipe = request.getParameter("nomEquipe");
+				
+
+				String nomEquipe = request.getParameter("path");
+				System.out.println("THIS SHIT IS parameter");
 				GestionLigueBaseball.gestionEquipe.exportXml(nomEquipe);
+				System.out.println("THIS SHIT IS exportXML done");
 				RequestDispatcher dispatcher = request
 						.getRequestDispatcher("/menu.jsp");
 				dispatcher.forward(request, response);
+				System.out.println("THIS SHIT IS load page");
 			}
 		} catch (LigueBaseballException e) {
 			
