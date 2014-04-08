@@ -84,7 +84,7 @@ public class GestionEquipe {
 		//shoot out xml
 		XMLOutputter output = new XMLOutputter();
 		output.setFormat(Format.getPrettyFormat());
-		output.output(document, new FileWriter("c:\\" + equipe + ".xml"));
+		output.output(document, new FileWriter(System.getProperty("user.dir") + equipe + ".xml"));
 	}
 	
 	
@@ -93,7 +93,7 @@ public class GestionEquipe {
 		SAXBuilder sb = new SAXBuilder();
 		try
 		{
-			Document document = sb.build(new File("C:\\" + path));
+			Document document = sb.build(new File(System.getProperty("user.dir") + path));
 			Element equipe = document.getRootElement();
 			String equipeNom = equipe.getAttributeValue("nom");
 			Element terrain = equipe.getChild("terrain");
