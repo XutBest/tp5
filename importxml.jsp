@@ -10,8 +10,8 @@
 <CENTER>
 <H1>Gestion de baseball</H1>
 <BR>
-<FORM ACTION="ExportXml" METHOD="POST">
-1.Nom de l'equipe (obligatoire) : <INPUT TYPE="TEXT" NAME="nomEquipe"
+<FORM ACTION="ImportXml" METHOD="POST">
+1.Nom de l'equipe (obligatoire) : <INPUT TYPE="TEXT" NAME="path"
   VALUE="">
 <BR>
 <BR>

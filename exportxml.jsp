@@ -11,16 +11,12 @@
 <H1>Gestion de baseball</H1>
 <BR>
 <FORM ACTION="ExportXml" METHOD="POST">
-1.Nom de l'equipe (obligatoire) : <INPUT TYPE="TEXT" NAME="nomEquipe"
+1.Path : <INPUT TYPE="TEXT" NAME="path"
   VALUE="">
 <BR>
 <BR>
-<INPUT TYPE="SUBMIT" NAME="submitXml"VALUE="Exporter XML">
+<INPUT TYPE="SUBMIT" NAME="submitXml"VALUE="Importer XML">
 </FORM>
 </CENTER>
 <BR>
-<a href="Login">Retour au menu</a>
-<BR>
-Date et heure :
-</BODY>
-</HTML>
+<%@ include file="/WEB-INF/jspf/footer.jspf" %> 

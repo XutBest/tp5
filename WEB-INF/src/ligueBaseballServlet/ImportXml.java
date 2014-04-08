@@ -46,11 +46,11 @@ public class ImportXml extends HttpServlet {
 			HttpServletResponse response) throws ServletException, IOException {
 		
 		try {
-			if (request.getParameter("nomEquipe") == null)
+			if (request.getParameter("path") == null)
 				throw new LigueBaseballException("Impossible de creer une equipe sans nom d'equipe");
 			else{
-				String nomEquipe = request.getParameter("nomEquipe");
-				GestionLigueBaseball.gestionEquipe.exportXml(nomEquipe);
+				String path = request.getParameter("path");
+				GestionLigueBaseball.gestionEquipe.importerXML(path);
 				RequestDispatcher dispatcher = request
 						.getRequestDispatcher("/login.jsp");
 				dispatcher.forward(request, response);
