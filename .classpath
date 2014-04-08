@@ -11,6 +11,5 @@
 	<classpathentry kind="lib" path="WEB-INF/lib/postgresql-9.3-1101.jdbc4.jar"/>
 	<classpathentry kind="lib" path="WEB-INF/lib/xerces.jar"/>
 	<classpathentry kind="src" path="WEB-INF/src"/>
-	<classpathentry kind="src" output="work" path="work"/>
 	<classpathentry kind="output" path="WEB-INF/classes"/>
 </classpath>

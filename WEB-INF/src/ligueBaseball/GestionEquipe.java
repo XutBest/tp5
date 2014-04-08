@@ -46,14 +46,10 @@ public class GestionEquipe {
 	public void exportXml(String equipeNom) throws SQLException, IOException
 	{
 		//Nous allons commencer notre arborescence en créant la racine XML
-		System.out.println("THIS SHIT IS avant element");
 		Element racine = new Element("equipe");
-		System.out.println("THIS SHIT IS element");
 		//On crée un nouveau Document JDOM basé sur la racine 
 		Document document = new Document(racine);
-		System.out.println("THIS SHIT IS document");
 		creeArbre(document, equipeNom);
-		System.out.println("THIS SHIT IS creerArbre");
 	}
 	
 	private void creeArbre(Document document,String equipe) throws SQLException, IOException
@@ -88,7 +84,7 @@ public class GestionEquipe {
 		//shoot out xml
 		XMLOutputter output = new XMLOutputter();
 		output.setFormat(Format.getPrettyFormat());
-		output.output(document, new FileWriter(System.getProperty("user.dir") + equipe + ".xml"));
+		output.output(document, new FileWriter(System.getProperty("user.dir") + "/" + equipe + ".xml"));
 	}
 	
 	
@@ -97,7 +93,7 @@ public class GestionEquipe {
 		SAXBuilder sb = new SAXBuilder();
 		try
 		{
-			Document document = sb.build(new File(System.getProperty("user.dir") + path));
+			Document document = sb.build(new File(System.getProperty("user.dir") +"/"+ path));
 			Element equipe = document.getRootElement();
 			String equipeNom = equipe.getAttributeValue("nom");
 			Element terrain = equipe.getChild("terrain");
