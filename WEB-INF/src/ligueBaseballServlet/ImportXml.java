@@ -56,7 +56,7 @@ public class ImportXml extends HttpServlet {
 				String path = request.getParameter("path");
 				GestionLigueBaseball.gestionEquipe.importerXML(path);
 				RequestDispatcher dispatcher = request
-						.getRequestDispatcher("/login.jsp");
+						.getRequestDispatcher("/menu.jsp");
 				dispatcher.forward(request, response);
 			}
 		} catch (LigueBaseballException e) {
