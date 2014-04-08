@@ -52,13 +52,13 @@ public class ExportXml extends HttpServlet {
 		System.out.println("THIS SHIT IS not yet WORKING");
 
 		try {
-			if (request.getParameter("path") == null)
+			if (request.getParameter("nomEquipe") == null)
 				throw new LigueBaseballException("Impossible de creer une equipe sans nom d'equipe");
 			else{
 				
 
-				String nomEquipe = request.getParameter("path");
-				System.out.println("THIS SHIT IS parameter");
+				String nomEquipe = request.getParameter("nomEquipe");
+				System.out.println("THIS SHIT IS parameter   " + nomEquipe);
 				GestionLigueBaseball.gestionEquipe.exportXml(nomEquipe);
 				System.out.println("THIS SHIT IS exportXML done");
 				RequestDispatcher dispatcher = request

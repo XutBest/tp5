@@ -2,8 +2,7 @@
 
 <BR>
 <FORM ACTION="ImportXml" METHOD="POST">
-1.Nom de l'equipe (obligatoire) : <INPUT TYPE="TEXT" NAME="path"
-  VALUE="">
+1.Path : <INPUT TYPE="TEXT" NAME="path"  VALUE="">
 <BR>
 <BR>
 <INPUT TYPE="SUBMIT" NAME="submitXml"VALUE="importer XML">
