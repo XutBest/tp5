@@ -27,14 +27,6 @@
     <servlet-class>ligueBaseballServlet.Logout</servlet-class>
   </servlet>
   <servlet>
-    <servlet-name>SelectionMembre</servlet-name>
-    <servlet-class>ligueBaseballServlet.SelectionMembre</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>ListePretMembre</servlet-name>
-    <servlet-class>ligueBaseballServlet.ListePretMembre</servlet-class>
-  </servlet>
-  <servlet>
     <servlet-name>AjoutEquipe</servlet-name>
     <servlet-class>ligueBaseballServlet.AjoutEquipe</servlet-class>
   </servlet>

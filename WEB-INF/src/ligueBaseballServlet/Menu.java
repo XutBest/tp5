@@ -37,10 +37,15 @@ public class Menu extends HttpServlet {
 		// response.sendError(response.SC_INTERNAL_SERVER_ERROR, "Acc�s
 		// invalide");
 		//doPost(request, response);
-		RequestDispatcher dispatcher =
-		  request.getRequestDispatcher("/menu.jsp");
-		dispatcher.forward(request, response);
-
+		if(request.getSession().getAttribute("etat") != null){
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/menu.jsp");
+			dispatcher.forward(request, response);
+		}else{
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/login.jsp");
+			dispatcher.forward(request, response);
+		}
+			
+		
 	}
 
 } // class
