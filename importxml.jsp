@@ -1,4 +1,3 @@
-<%@ page import="java.util.*,java.text.*,ligueBaseball.*" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <HTML>
 <HEAD>
@@ -11,9 +10,17 @@
 <CENTER>
 <H1>Gestion de baseball</H1>
 <BR>
-<% 
-GestionLigueBaseball ligueBaseball = (GestionLigueBaseball) session.getAttribute("baseball");
-%>
-<%= ligueBaseball.gestionEquipe.getEquipes() %>
+<FORM ACTION="ExportXml" METHOD="POST">
+1.Nom de l'equipe (obligatoire) : <INPUT TYPE="TEXT" NAME="nomEquipe"
+  VALUE="">
 <BR>
-<%@ include file="/WEB-INF/jspf/footer.jspf" %> 
+<BR>
+<INPUT TYPE="SUBMIT" NAME="submitXml"VALUE="Exporter XML">
+</FORM>
+</CENTER>
+<BR>
+<a href="Login">Retour au menu</a>
+<BR>
+Date et heure :
+</BODY>
+</HTML>

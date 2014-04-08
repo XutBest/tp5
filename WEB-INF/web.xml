@@ -85,4 +85,9 @@
     <url-pattern>/ExportXml</url-pattern>
     <url-pattern>/exportxml</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ImportXml</servlet-name>
+    <url-pattern>/ImportXml</url-pattern>
+    <url-pattern>/importxml</url-pattern>
+  </servlet-mapping>
 </web-app>

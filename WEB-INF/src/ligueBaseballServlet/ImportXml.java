@@ -20,7 +20,7 @@ import ligueBaseball.LigueBaseballException;
  */
 
 @SuppressWarnings("serial")
-public class Menu extends HttpServlet {
+public class ImportXml extends HttpServlet {
 	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -38,30 +38,27 @@ public class Menu extends HttpServlet {
 		// response.sendError(response.SC_INTERNAL_SERVER_ERROR, "Acc�s
 		// invalide");
 		//doPost(request, response);
-		if(request.getParameter("addTeam") != null){
-			RequestDispatcher dispatcher = request
-					.getRequestDispatcher("/ajoutequipe.jsp");
-			dispatcher.forward(request, response);
-		}
-		else if(request.getParameter("showTeams") != null){
-			RequestDispatcher dispatcher = request
-					.getRequestDispatcher("/afficherequipes.jsp");
-			dispatcher.forward(request, response);
-		}
-		else if(request.getParameter("deleteTeam") != null){
-			RequestDispatcher dispatcher = request
-					.getRequestDispatcher("/supprimerequipe.jsp");
-			dispatcher.forward(request, response);
-		}
-		else if(request.getParameter("exportXml") != null){
-			RequestDispatcher dispatcher = request
-					.getRequestDispatcher("/exportxml.jsp");
-			dispatcher.forward(request, response);
-		}
-		else if(request.getParameter("importXml") != null){
-			RequestDispatcher dispatcher = request
-					.getRequestDispatcher("/importxml.jsp");
-			dispatcher.forward(request, response);
+		if (request.getParameter("submitXml") != null)
+			traiterCreerEquipe(request, response);
+	}
+	
+	public void traiterCreerEquipe(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		
+		try {
+			if (request.getParameter("nomEquipe") == null)
+				throw new LigueBaseballException("Impossible de creer une equipe sans nom d'equipe");
+			else{
+				String nomEquipe = request.getParameter("nomEquipe");
+				GestionLigueBaseball.gestionEquipe.exportXml(nomEquipe);
+				RequestDispatcher dispatcher = request
+						.getRequestDispatcher("/login.jsp");
+				dispatcher.forward(request, response);
+			}
+		} catch (LigueBaseballException e) {
+			
+		} catch (Exception e) {
+		
 		}
 	}
 
