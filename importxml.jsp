@@ -15,7 +15,7 @@
   VALUE="">
 <BR>
 <BR>
-<INPUT TYPE="SUBMIT" NAME="submitXml"VALUE="Exporter XML">
+<INPUT TYPE="SUBMIT" NAME="submitXml"VALUE="importer XML">
 </FORM>
 </CENTER>
 <BR>

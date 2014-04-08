@@ -8,8 +8,8 @@
 		
 		
 	    <!-- Bootstrap core CSS -->
-	    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
-	
+	    <link type="text/css" href="./dist/css/bootstrap.css" rel="stylesheet">
+		
 	    <!-- Custom styles for this template -->
 	    <link href="style.css" rel="stylesheet">
 	</HEAD>

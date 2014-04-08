@@ -20,11 +20,12 @@ import ligueBaseball.LigueBaseballException;
  */
 
 @SuppressWarnings("serial")
-public class Menu extends HttpServlet {
+public class AfficherEquipe extends HttpServlet {
 	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
+		doGet(request, response);
+
 	}
 
 	// Dans les formulaire, on utilise la m�thode POST
@@ -38,7 +39,7 @@ public class Menu extends HttpServlet {
 		// invalide");
 		//doPost(request, response);
 		RequestDispatcher dispatcher =
-		  request.getRequestDispatcher("/menu.jsp");
+		  request.getRequestDispatcher("/afficherequipes.jsp");
 		dispatcher.forward(request, response);
 
 	}

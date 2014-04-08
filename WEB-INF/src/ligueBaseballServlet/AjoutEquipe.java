@@ -38,6 +38,10 @@ public class AjoutEquipe extends HttpServlet {
 		// response.sendError(response.SC_INTERNAL_SERVER_ERROR, "Acc�s
 		// invalide");
 		//doPost(request, response);
+		RequestDispatcher dispatcher =
+		  request.getRequestDispatcher("/ajoutequipe.jsp");
+		dispatcher.forward(request, response);
+
 		if (request.getParameter("creerEquipe") != null)
 			traiterCreerEquipe(request, response);
 	}

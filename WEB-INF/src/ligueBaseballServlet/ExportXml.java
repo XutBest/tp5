@@ -38,6 +38,10 @@ public class ExportXml extends HttpServlet {
 		// response.sendError(response.SC_INTERNAL_SERVER_ERROR, "Acc�s
 		// invalide");
 		//doPost(request, response);
+		RequestDispatcher dispatcher =
+				  request.getRequestDispatcher("/exportxml.jsp");
+				dispatcher.forward(request, response);
+
 		if (request.getParameter("submitXml") != null)
 			traiterCreerEquipe(request, response);
 	}
