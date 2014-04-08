@@ -7,6 +7,5 @@
 <BR>
 <INPUT TYPE="SUBMIT" NAME="submitXml"VALUE="Importer XML">
 </FORM>
-</CENTER>
 <BR>
 <%@ include file="/WEB-INF/jspf/footer.jspf" %> 
