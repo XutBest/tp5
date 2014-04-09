@@ -7,7 +7,7 @@
 <BR>
 <a class="btn btn-default" href="supprimerEquipe">Supprimer Equipe</a>
 <BR>
-<a class="btn btn-default" href="creerJoueur">Creer joueur</a>
+<a class="btn btn-default" href="creerjoueur">Creer joueur</a>
 <BR>
 <a class="btn btn-default" href="afficherJoueur">Afficher joueur equipe</a>
 <BR>

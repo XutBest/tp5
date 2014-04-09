@@ -124,7 +124,7 @@
   <servlet-mapping>
     <servlet-name>CreerJoueur</servlet-name>
     <url-pattern>/CreerJoueur</url-pattern>
-    <url-pattern>/creerJoueur</url-pattern>
+    <url-pattern>/creerjoueur</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>AfficherJoueur</servlet-name>
