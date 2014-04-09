@@ -48,7 +48,7 @@
   </servlet>
   <servlet>
     <servlet-name>SupprimerJoueur</servlet-name>
-    <servlet-class>ligueBaseballServlet.SupprimerEquipe</servlet-class>
+    <servlet-class>ligueBaseballServlet.SupprimerJoueur</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>AfficherJoueursEquipe</servlet-name>
@@ -56,11 +56,11 @@
   </servlet>
   <servlet>
     <servlet-name>CreerMatch</servlet-name>
-    <servlet-class>ligueBaseballServlet.SupprimerEquipe</servlet-class>
+    <servlet-class>ligueBaseballServlet.CreerMatch</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>CreerArbitre</servlet-name>
-    <servlet-class>ligueBaseballServlet.SupprimerEquipe</servlet-class>
+    <servlet-class>ligueBaseballServlet.CreerArbitre</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>AfficherArbitre</servlet-name>
@@ -68,11 +68,11 @@
   </servlet>
   <servlet>
     <servlet-name>ArbitrerMatch</servlet-name>
-    <servlet-class>ligueBaseballServlet.SupprimerEquipe</servlet-class>
+    <servlet-class>ligueBaseballServlet.arbitrermatch</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>EntrerResultat</servlet-name>
-    <servlet-class>ligueBaseballServlet.SupprimerEquipe</servlet-class>
+    <servlet-class>ligueBaseballServlet.EntrerResultat</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>AfficherResultats</servlet-name>
