@@ -54,7 +54,7 @@ public class Joueur {
 		stmtGetEquipeId = cx.getConnection().prepareStatement(
 				"select equipe.equipeid from equipe where equipe.equipenom= ?");
 		stmtSelectJoueur = cx.getConnection().prepareStatement(
-						"select joueurnom, joueur.joueurprenom,equipe.equipenom from joueur "
+						"select joueur.joueurid, joueur.joueurnom, joueur.joueurprenom,equipe.equipenom from joueur "
 						+ "left join faitpartie on faitpartie.joueurid = joueur.joueurid "
 						+ "left join equipe on equipe.equipeid = faitpartie.equipeid");
 

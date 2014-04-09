@@ -47,12 +47,12 @@
     <servlet-class>ligueBaseballServlet.CreerJoueur</servlet-class>
   </servlet>
   <servlet>
-    <servlet-name>AfficherJoueur</servlet-name>
+    <servlet-name>SupprimerJoueur</servlet-name>
     <servlet-class>ligueBaseballServlet.SupprimerEquipe</servlet-class>
   </servlet>
   <servlet>
-    <servlet-name>SupprimerJoueur</servlet-name>
-    <servlet-class>ligueBaseballServlet.SupprimerEquipe</servlet-class>
+    <servlet-name>AfficherJoueursEquipe</servlet-name>
+    <servlet-class>ligueBaseballServlet.AfficherJoueursEquipe</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>CreerMatch</servlet-name>
@@ -127,9 +127,9 @@
     <url-pattern>/creerjoueur</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-    <servlet-name>AfficherJoueur</servlet-name>
-    <url-pattern>/AfficherJoueur</url-pattern>
-    <url-pattern>/afficherJoueur</url-pattern>
+    <servlet-name>AfficherJoueursEquipe</servlet-name>
+    <url-pattern>/AfficherJoueursEquipe</url-pattern>
+    <url-pattern>/afficherJoueursEquipe</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>SupprimerJoueur</servlet-name>

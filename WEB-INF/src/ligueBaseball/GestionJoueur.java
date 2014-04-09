@@ -122,29 +122,40 @@ public class GestionJoueur {
 	 * @throws SQLException
 	 * @throws LigueBaseballException
 	 */
-	public void getJoueur(String nomEquipe) throws SQLException, LigueBaseballException
+	public String getJoueur(String nomEquipe) throws SQLException, LigueBaseballException
 	{
-		int equipeId = equipe.existe(nomEquipe);
+		String content = "";
+		int equipeId = 0;
+		if(nomEquipe.length() == 0)
+			equipeId = -2;
+		else
+			equipeId = equipe.existe(nomEquipe);
 		if(equipeId == -1)
 			throw new LigueBaseballException("Equipe inexistante " + nomEquipe);
 		try{
-			List<TupleJoueur> tj = joueur.selectjoueurEquipe(equipeId);
+			List<TupleJoueur> tj;
+			if(equipeId != -2)
+				tj = joueur.selectjoueurEquipe(equipeId);
+			else
+				tj = joueur.selectjoueurEquipe();
 			for(TupleJoueur t : tj)
 			{
-				System.out.println(t.Nom + " " + t.Prenom + " " + t.EquipeNom);
+				content += t.Nom + " " + t.Prenom + " " + t.EquipeNom + "\n";
 			}
 		}
 		catch (SQLException e) {
 		    System.out.println("Le joueur n'existe pas");
 		}
+		return content;
 	}
 
 	/**
 	 * @throws SQLException
 	 * @throws LigueBaseballException
 	 */
-	public void getJoueur() throws SQLException, LigueBaseballException
+	public String getJoueur() throws SQLException, LigueBaseballException
 	{
-		getJoueur("");
+		String content = getJoueur("");
+		return content;
 	}
 }
