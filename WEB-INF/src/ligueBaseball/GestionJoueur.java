@@ -131,22 +131,24 @@ public class GestionJoueur {
 		else
 			equipeId = equipe.existe(nomEquipe);
 		if(equipeId == -1)
-			throw new LigueBaseballException("Equipe inexistante " + nomEquipe);
+			return content;
 		try{
 			List<TupleJoueur> tj;
 			if(equipeId != -2)
 				tj = joueur.selectjoueurEquipe(equipeId);
 			else
 				tj = joueur.selectjoueurEquipe();
+			content += "Nom, Prenom, Equipe <br>";
 			for(TupleJoueur t : tj)
 			{
-				content += t.Nom + " " + t.Prenom + " " + t.EquipeNom + "\n";
+				content += t.Nom + " " + t.Prenom + " " + t.EquipeNom + "<br>";
 			}
 		}
 		catch (SQLException e) {
 		    System.out.println("Le joueur n'existe pas");
 		}
-		return content;
+		
+		return content.replace(" null", "");
 	}
 
 	/**

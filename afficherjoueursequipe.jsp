@@ -5,6 +5,8 @@
   VALUE="">
 <BR>
 <INPUT TYPE="SUBMIT" NAME="afficherJoueurs"VALUE="Afficher Joueurs">
+<BR>
+<BR>
 <%
   // calcul de la liste de prêts du membre
   //if (request.getParameter("supprimerEquipe") != null){

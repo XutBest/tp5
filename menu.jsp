@@ -11,7 +11,7 @@
 <BR>
 <a class="btn btn-default" href="afficherJoueursEquipe">Afficher joueur equipe</a>
 <BR>
-<a class="btn btn-default" href="supprimerJoueur">Suprimer joueur</a>
+<a class="btn btn-default" href="supprimerJoueur">Supprimer joueur</a>
 <BR>
 <a class="btn btn-default" href="creerMatch">Creer match</a>
 <BR>
