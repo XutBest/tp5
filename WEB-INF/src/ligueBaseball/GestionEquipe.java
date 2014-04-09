@@ -1,20 +1,34 @@
 package ligueBaseball;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.sql.*;
 import java.util.List;
 import java.io.*;
 
+import org.w3c.dom.ls.LSResourceResolver;
+import org.xml.sax.Attributes;
+import org.xml.sax.ContentHandler;
+import org.xml.sax.ErrorHandler;
+import org.xml.sax.Locator;
+import org.xml.sax.SAXException;
 import org.xml.sax.helpers.XMLReaderFactory;
 
 import java.util.Iterator;
 
+import javax.servlet.ServletContext;
 import javax.sql.RowSetInternal;
 import javax.sql.rowset.WebRowSet;
 import javax.sql.rowset.spi.XmlReader;
 
+import org.apache.xerces.validators.common.XMLValidator;
 import org.jdom2.*;
 import org.jdom2.input.*;
 import org.jdom2.output.*;
+
+import sun.security.validator.ValidatorException;
+
+import com.sun.org.apache.xerces.internal.parsers.SAXParser;
 
 /*
 import org.jdom.*;
@@ -93,36 +107,71 @@ public class GestionEquipe {
 		SAXBuilder sb = new SAXBuilder();
 		try
 		{
-			Document document = sb.build(new File(System.getProperty("user.dir") +"/"+ path));
-			Element equipe = document.getRootElement();
-			String equipeNom = equipe.getAttributeValue("nom");
-			Element terrain = equipe.getChild("terrain");
-			
-			String terrainNom = terrain.getAttributeValue("nom");
-			String adresse = terrain.getAttributeValue("adresse");
-			//add in bd team and terrain
-			
-			ajout(equipeNom,terrainNom,adresse);
-			
-			Element joueurs = equipe.getChild("joueurs");
-			
-			List<Element> listJoueurs = joueurs.getChildren();
-			for(Element j : listJoueurs)
-			{
-				String nom = j.getAttribute("nom").getValue();
-				String prenom = j.getAttribute("prenom").getValue();
-				int numero = j.getAttribute("numero").getIntValue();
-				Date date = Date.valueOf( j.getAttribute("dateDebut").getValue());
-				//insert in bd joueur if not exist
-				GestionLigueBaseball.gestionJoueur.ajout(nom,prenom,equipeNom,numero,date);
+			boolean ok = validationXML(path);
+			if(ok){
+				Document document = sb.build(path);
+				Element equipe = document.getRootElement();
+				String equipeNom = equipe.getAttributeValue("nom");
+				Element terrain = equipe.getChild("terrain");
+				
+				String terrainNom = terrain.getAttributeValue("nom");
+				String adresse = terrain.getAttributeValue("adresse");
+				//add in bd team and terrain
+				
+				ajout(equipeNom,terrainNom,adresse);
+				
+				Element joueurs = equipe.getChild("joueurs");
+				
+				List<Element> listJoueurs = joueurs.getChildren();
+				for(Element j : listJoueurs)
+				{
+					String nom = j.getAttribute("nom").getValue();
+					String prenom = j.getAttribute("prenom").getValue();
+					int numero = j.getAttribute("numero").getIntValue();
+					Date date = Date.valueOf( j.getAttribute("dateDebut").getValue());
+					//insert in bd joueur if not exist
+					GestionLigueBaseball.gestionJoueur.ajout(nom,prenom,equipeNom,numero,date);
+				}
 			}
-			
 		}
 		catch(Exception e)
 		{
 			System.out.println("Exception: ");
 			e.printStackTrace();
 		}
+	}
+	
+	public boolean validationXML(String path){
+		boolean validSchema = true;
+		SAXParser parser = new SAXParser();
+		try{
+			parser.setFeature("http://xml.org/sax/features/validation", true); 
+			parser.setFeature("http://xml.org/sax/features/namespaces", true); 
+			parser.setFeature("http://apache.org/xml/features/validation/schema", true); 
+			parser.setFeature("http://apache.org/xml/features/validation/schema-full-checking",true); 
+			parser.setProperty("http://apache.org/xml/properties/schema/external-noNamespaceSchemaLocation", 
+					"validator.xsd");
+			
+			Validator handler = new Validator();
+			parser.setErrorHandler(handler);
+			parser.parse(path);
+			if(handler.validationError == true){
+				System.out.println("******validateSchema() XML Document has Error:" 
+						 + "\n handler.validationError = "+ handler.validationError 
+						 + "\n handler.saxParseException.getMessage()= " 
+						 + handler.saxParseException.getMessage()); 
+				validSchema = false; 
+			}
+			else{
+				System.out.println("******validateSchema() Le fichier: " 
+						 + path + " est valide!");
+			}
+		} catch (Exception e){
+			System.out.println("Exception: ");
+			e.printStackTrace();
+			validSchema = false;
+		}
+		return validSchema;
 	}
 	
 	/**
