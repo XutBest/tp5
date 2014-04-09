@@ -88,7 +88,6 @@ public class CreerJoueur extends HttpServlet {
 							GestionLigueBaseball.gestionJoueur.ajout(joueurNom, joueurPrenom, equipe, numero,date);
 						}
 					}
-					
 				}
 				
 				
