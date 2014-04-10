@@ -1,6 +1,8 @@
 ﻿package ligueBaseballServlet;
 
 import java.io.IOException;
+import java.util.LinkedList;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -39,15 +41,16 @@ public class AjoutEquipe extends HttpServlet {
 		// invalide");
 		//doPost(request, response);
 		if(request.getSession().getAttribute("etat") != null){
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/ajoutequipe.jsp");
-			dispatcher.forward(request, response);
+			if (request.getParameter("creerEquipe") != null)
+				traiterCreerEquipe(request, response);
+			else{
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/ajoutequipe.jsp");
+				dispatcher.forward(request, response);
+			}
 		}else{
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/login.jsp");
 			dispatcher.forward(request, response);
 		}
-		
-		if (request.getParameter("creerEquipe") != null)
-			traiterCreerEquipe(request, response);
 	}
 	
 	public void traiterCreerEquipe(HttpServletRequest request,
@@ -76,9 +79,15 @@ public class AjoutEquipe extends HttpServlet {
 				dispatcher.forward(request, response);
 			}
 		} catch (LigueBaseballException e) {
-			
+			List listeMessageErreur = new LinkedList();
+			listeMessageErreur.add(e.toString());
+			request.setAttribute("listeMessageErreur", listeMessageErreur);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/ajoutequipe.jsp");
+			dispatcher.forward(request, response);
 		} catch (Exception e) {
 		
+		} finally
+		{
 		}
 	}
 

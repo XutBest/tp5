@@ -2,6 +2,8 @@ package ligueBaseballServlet;
 
 import java.io.IOException;
 import java.sql.Date;
+import java.util.LinkedList;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -96,7 +98,6 @@ public class CreerJoueur extends HttpServlet {
 				dispatcher.forward(request, response);
 			}
 		} catch (LigueBaseballException e) {
-			
 		} catch (Exception e) {
 		
 		}
