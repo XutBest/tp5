@@ -39,17 +39,18 @@ public class ImportXml extends HttpServlet {
 		// invalide");
 		//doPost(request, response);
 		if(request.getSession().getAttribute("etat") != null){
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/importxml.jsp");
-			dispatcher.forward(request, response);
+			if (request.getParameter("submitXml") != null)
+				traiterCreerEquipe(request, response);
+			else{
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/importxml.jsp");
+				dispatcher.forward(request, response);
+			}
 		}else{
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/login.jsp");
 			dispatcher.forward(request, response);
 		}
-
-		if (request.getParameter("submitXml") != null)
-			traiterCreerEquipe(request, response);
 	}
-	
+
 	public void traiterCreerEquipe(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		

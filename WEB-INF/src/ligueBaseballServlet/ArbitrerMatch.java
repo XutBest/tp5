@@ -42,15 +42,18 @@ public class ArbitrerMatch extends HttpServlet {
 		// invalide");
 		//doPost(request, response);
 		if(request.getSession().getAttribute("etat") != null){
+			if (request.getParameter("arbitrerMatch") != null){
+				traiterArbitrerMatch(request, response); 
+			}else{			
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/arbitrermatch.jsp");
 			dispatcher.forward(request, response);
+			}
 		}else{
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/login.jsp");
 			dispatcher.forward(request, response);
 		}
 		
-		if (request.getParameter("arbitrerMatch") != null)
-			traiterArbitrerMatch(request, response);
+		
 	}
 		
 	public void traiterArbitrerMatch(HttpServletRequest request,

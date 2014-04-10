@@ -42,15 +42,16 @@ public class EntrerResultat extends HttpServlet {
 		// invalide");
 		//doPost(request, response);
 		if(request.getSession().getAttribute("etat") != null){
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/entrerresultat.jsp");
-			dispatcher.forward(request, response);
+			if (request.getParameter("entrerResultat") != null)
+				traiterArbitrerMatch(request, response);
+			else{
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/entrerresultat.jsp");
+				dispatcher.forward(request, response);
+			}
 		}else{
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/login.jsp");
 			dispatcher.forward(request, response);
 		}
-		
-		if (request.getParameter("entrerResultat") != null)
-			traiterArbitrerMatch(request, response);
 	}
 		
 	public void traiterArbitrerMatch(HttpServletRequest request,

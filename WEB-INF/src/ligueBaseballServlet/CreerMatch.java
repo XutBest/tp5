@@ -42,15 +42,17 @@ public class CreerMatch extends HttpServlet {
 		// invalide");
 		//doPost(request, response);
 		if(request.getSession().getAttribute("etat") != null){
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/creermatch.jsp");
-			dispatcher.forward(request, response);
+			if (request.getParameter("creermatch") != null)
+				traiterCreerMatch(request, response);
+			else{
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/creermatch.jsp");
+				dispatcher.forward(request, response);
+			}
 		}else{
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/login.jsp");
 			dispatcher.forward(request, response);
 		}
 		
-		if (request.getParameter("creermatch") != null)
-			traiterCreerMatch(request, response);
 	}
 		
 	public void traiterCreerMatch(HttpServletRequest request,

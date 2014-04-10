@@ -42,15 +42,16 @@ public class CreerJoueur extends HttpServlet {
 		// invalide");
 		//doPost(request, response);
 		if(request.getSession().getAttribute("etat") != null){
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/creerjoueur.jsp");
-			dispatcher.forward(request, response);
+			if (request.getParameter("creerEquipe") != null)
+				traiterCreerEquipe(request, response);
+			else{
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/creerjoueur.jsp");
+				dispatcher.forward(request, response);
+			}
 		}else{
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/login.jsp");
 			dispatcher.forward(request, response);
 		}
-		
-		if (request.getParameter("creerEquipe") != null)
-			traiterCreerEquipe(request, response);
 	}
 	
 	public void traiterCreerEquipe(HttpServletRequest request,

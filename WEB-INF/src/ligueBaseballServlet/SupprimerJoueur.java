@@ -38,18 +38,20 @@ public class SupprimerJoueur extends HttpServlet {
 		// invalide");
 		//doPost(request, response);
 		if(request.getSession().getAttribute("etat") != null){
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/supprimmerjoueur.jsp");
-			dispatcher.forward(request, response);
+			if (request.getParameter("SupprimerJoueur") != null)
+				traiterSupprimerJoueur(request, response);
+			else{
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/supprimmerjoueur.jsp");
+				dispatcher.forward(request, response);
+			}
 		}else{
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/login.jsp");
 			dispatcher.forward(request, response);
 		}
 		
-		if (request.getParameter("SupprimerJoueur") != null)
-			traiterSupprimerEquipe(request, response);
 	}
 	
-	public void traiterSupprimerEquipe(HttpServletRequest request,
+	public void traiterSupprimerJoueur(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		
 		try {

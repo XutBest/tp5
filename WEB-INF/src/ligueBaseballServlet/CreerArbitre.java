@@ -41,15 +41,16 @@ public class CreerArbitre extends HttpServlet {
 		// invalide");
 		//doPost(request, response);
 		if(request.getSession().getAttribute("etat") != null){
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/creerarbitre.jsp");
-			dispatcher.forward(request, response);
+			if (request.getParameter("creerarbitre") != null)
+				traiterCreerArbitre(request, response);
+			else{
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/creerArbitre.jsp");
+				dispatcher.forward(request, response);
+			}
 		}else{
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/login.jsp");
 			dispatcher.forward(request, response);
 		}
-		
-		if (request.getParameter("creerarbitre") != null)
-			traiterCreerArbitre(request, response);
 	}
 		
 	public void traiterCreerArbitre(HttpServletRequest request,
