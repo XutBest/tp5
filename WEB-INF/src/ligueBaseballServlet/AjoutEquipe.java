@@ -85,9 +85,10 @@ public class AjoutEquipe extends HttpServlet {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/ajoutequipe.jsp");
 			dispatcher.forward(request, response);
 		} catch (Exception e) {
-		
-		} finally
-		{
+			e.printStackTrace();
+			response.sendError(
+					HttpServletResponse.SC_INTERNAL_SERVER_ERROR, e
+							.toString());
 		}
 	}
 
