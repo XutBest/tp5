@@ -1,4 +1,3 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <%@ include file="/WEB-INF/jspf/header.jspf" %> 
 <BR>
 <FORM ACTION="CreerArbitre" METHOD="POST">
@@ -13,4 +12,5 @@
 </FORM>
 </CENTER>
 <BR>
+<%@ include file="/WEB-INF/jspf/messageErreur.jspf" %>
 <%@ include file="/WEB-INF/jspf/footer.jspf" %> 

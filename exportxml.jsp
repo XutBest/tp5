@@ -7,8 +7,5 @@
 <INPUT TYPE="SUBMIT" NAME="submitXml"VALUE="Exporter XML">
 </FORM>
 <BR>
-<%-- inclusion d'une autre page pour l'affichage des messages d'erreur--%>
-		<jsp:include page="/WEB-INF/messageErreur.jsp" />
-		<BR>
-
+<%@ include file="/WEB-INF/jspf/messageErreur.jspf" %>
 <%@ include file="/WEB-INF/jspf/footer.jspf" %> 

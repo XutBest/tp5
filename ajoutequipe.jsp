@@ -1,4 +1,3 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <%@ include file="/WEB-INF/jspf/header.jspf" %> 
 <BR>
 <FORM ACTION="AjoutEquipe" METHOD="POST">
@@ -16,8 +15,5 @@
 </FORM>
 </CENTER>
 <BR>
-<%-- inclusion d'une autre page pour l'affichage des messages d'erreur--%>
-		<jsp:include page="/WEB-INF/messageErreur.jsp" />
-		<BR>
-		
+<%@ include file="/WEB-INF/jspf/messageErreur.jspf" %>		
 <%@ include file="/WEB-INF/jspf/footer.jspf" %> 

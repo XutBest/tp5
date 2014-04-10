@@ -24,4 +24,5 @@
  //}
 %>
 </FORM>
+<%@ include file="/WEB-INF/jspf/messageErreur.jspf" %> 
 <%@ include file="/WEB-INF/jspf/footer.jspf" %> 

@@ -68,7 +68,7 @@
   </servlet>
   <servlet>
     <servlet-name>ArbitrerMatch</servlet-name>
-    <servlet-class>ligueBaseballServlet.arbitrermatch</servlet-class>
+    <servlet-class>ligueBaseballServlet.ArbitrerMatch</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>EntrerResultat</servlet-name>
@@ -76,7 +76,7 @@
   </servlet>
   <servlet>
     <servlet-name>AfficherResultats</servlet-name>
-    <servlet-class>ligueBaseballServlet.SupprimerEquipe</servlet-class>
+    <servlet-class>ligueBaseballServlet.AfficherMatch</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>ExportXml</servlet-name>

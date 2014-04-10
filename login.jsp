@@ -14,9 +14,7 @@
 			<INPUT TYPE="SUBMIT" VALUE="Soumettre" class="btn btn-default" >
 		</FORM>
 		<BR>
-		<%-- inclusion d'une autre page pour l'affichage des messages d'erreur--%>
-		<jsp:include page="/WEB-INF/messageErreur.jsp" />
-		<BR>
+		<%@ include file="/WEB-INF/jspf/messageErreur.jspf" %>	
 		<%-- affichage de la date et heure; --%>
 		<%-- utile pour debogger et verifier si la page a �t� --%>
 		<%-- par le fureteur --%>
