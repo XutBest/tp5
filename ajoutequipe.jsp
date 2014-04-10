@@ -16,4 +16,8 @@
 </FORM>
 </CENTER>
 <BR>
+<%-- inclusion d'une autre page pour l'affichage des messages d'erreur--%>
+		<jsp:include page="/WEB-INF/messageErreur.jsp" />
+		<BR>
+		
 <%@ include file="/WEB-INF/jspf/footer.jspf" %> 
