@@ -4,7 +4,7 @@
 1.Nom de l'equipe local (obligatoire) : <INPUT TYPE="TEXT" NAME="equipeLocal"
   VALUE="">
 <BR>
-2.Prenom de l'equipe visiteur (obligatoire) : <INPUT TYPE="TEXT" NAME="equipeVisiteur"
+2.Nom de l'equipe visiteur (obligatoire) : <INPUT TYPE="TEXT" NAME="equipeVisiteur"
   VALUE="">
  <BR>
  3.Date du match (obligatoire) : <INPUT TYPE="TEXT" NAME="date"
@@ -14,7 +14,7 @@
   VALUE="">
  <BR>
 <BR>
-<INPUT TYPE="SUBMIT" NAME="creerMatch"VALUE="CreerMatch">
+<INPUT TYPE="SUBMIT" NAME="creerMatch"VALUE="Ajouter le match à la base de donnée">
 </FORM>
 </CENTER>
 <BR>¸

@@ -18,7 +18,7 @@
   VALUE="">
 <BR>
 <BR>
-<INPUT TYPE="SUBMIT" NAME="creerEquipe"VALUE="CreerEquipe">
+<INPUT TYPE="SUBMIT" NAME="creerJoueur"VALUE="Creer Equipe">
 </FORM>
 </CENTER>
 <BR>

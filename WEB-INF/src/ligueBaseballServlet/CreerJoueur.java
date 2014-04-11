@@ -42,8 +42,8 @@ public class CreerJoueur extends HttpServlet {
 		// invalide");
 		//doPost(request, response);
 		if(request.getSession().getAttribute("etat") != null){
-			if (request.getParameter("creerEquipe") != null)
-				traiterCreerEquipe(request, response);
+			if (request.getParameter("creerJoueur") != null)
+				traiterCreerJoueur(request, response);
 			else{
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/creerjoueur.jsp");
 				dispatcher.forward(request, response);
@@ -54,7 +54,7 @@ public class CreerJoueur extends HttpServlet {
 		}
 	}
 	
-	public void traiterCreerEquipe(HttpServletRequest request,
+	public void traiterCreerJoueur(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		
 		try {
@@ -99,6 +99,11 @@ public class CreerJoueur extends HttpServlet {
 				dispatcher.forward(request, response);
 			}
 		} catch (LigueBaseballException e) {
+			List listeMessageErreur = new LinkedList();
+			listeMessageErreur.add(e.getMessage());
+			request.setAttribute("listeMessageErreur", listeMessageErreur);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/creerjoueur.jsp");
+			dispatcher.forward(request, response);
 		} catch (Exception e) {
 		
 		}

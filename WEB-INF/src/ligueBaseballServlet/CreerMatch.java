@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.sql.Time;
+import java.util.LinkedList;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -42,7 +44,7 @@ public class CreerMatch extends HttpServlet {
 		// invalide");
 		//doPost(request, response);
 		if(request.getSession().getAttribute("etat") != null){
-			if (request.getParameter("creermatch") != null)
+			if (request.getParameter("creerMatch") != null)
 				traiterCreerMatch(request, response);
 			else{
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/creermatch.jsp");
@@ -76,7 +78,11 @@ public class CreerMatch extends HttpServlet {
 				dispatcher.forward(request, response);
 			}
 		} catch (LigueBaseballException e) {
-			
+			List listeMessageErreur = new LinkedList();
+			listeMessageErreur.add(e.getMessage());
+			request.setAttribute("listeMessageErreur", listeMessageErreur);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/creermatch.jsp");
+			dispatcher.forward(request, response);
 		} catch (Exception e) {
 			//bad date format
 		}

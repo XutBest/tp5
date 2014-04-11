@@ -85,14 +85,15 @@ public class GestionMatch {
 	 * @throws SQLException
 	 * @throws LigueBaseballException 
 	 */
-	public void afficherResultatDate() throws SQLException, LigueBaseballException {
+	public String afficherResultatDate() throws SQLException, LigueBaseballException {
 		List<TupleMatch> list = match.afficherResultat();
 		//if(list.size()==0)
 		    
-		System.out.println("Local-Visiteur : Liste des arbitres");
+		String match = "Local-Visiteur : Liste des arbitres" + "<br>";
 		for (TupleMatch tupleMatch : list) {
-			System.out.println(tupleMatch.PointageLocal + "-" + tupleMatch.PointageVisiteur + " : " + tupleMatch.ListeArbitres);
+			match += tupleMatch.PointageLocal + "-" + tupleMatch.PointageVisiteur + " : " + tupleMatch.ListeArbitres + "<br>";
 		}
+		return match;
 	}
 	
 	/**

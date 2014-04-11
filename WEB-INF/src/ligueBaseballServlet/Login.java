@@ -66,14 +66,14 @@ public class Login extends HttpServlet {
 		} catch (SQLException e) {
 			List listeMessageErreur = new LinkedList();
 			listeMessageErreur.add("Erreur de connexion au serveur");
-			listeMessageErreur.add(e.toString());
+			listeMessageErreur.add(e.getMessage());
 			request.setAttribute("listeMessageErreur", listeMessageErreur);
 			RequestDispatcher dispatcher = request
 					.getRequestDispatcher("/login.jsp");
 			dispatcher.forward(request, response);
 			// pour d�boggage seulement : afficher tout le contenu de
 			// l'exception
-			e.printStackTrace();
+			//e.printStackTrace();
 		} catch (LigueBaseballException e) {
 			e.printStackTrace();
 			response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, e

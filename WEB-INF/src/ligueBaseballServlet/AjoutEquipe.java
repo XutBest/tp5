@@ -80,7 +80,7 @@ public class AjoutEquipe extends HttpServlet {
 			}
 		} catch (LigueBaseballException e) {
 			List listeMessageErreur = new LinkedList();
-			listeMessageErreur.add(e.toString());
+			listeMessageErreur.add(e.getMessage());
 			request.setAttribute("listeMessageErreur", listeMessageErreur);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/ajoutequipe.jsp");
 			dispatcher.forward(request, response);

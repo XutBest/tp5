@@ -48,16 +48,18 @@ public class GestionArbitre {
 	/**
 	 * fait les verification et envoie le message de retourner un arbitre qui correspond aux parametres
 	 */
-	public void getArbitre() {
+	public String getArbitre() {
 		try {
+			String liste ="";
 			List<TupleArbitre> listArbitres = arbitre.getArbitre();
 			for (TupleArbitre tupleArbitre : listArbitres) {
-				System.out.println(tupleArbitre.arbitreNom + ", "
-						+ tupleArbitre.arbitrePrenom);
+				liste += tupleArbitre.arbitreNom + ", " + tupleArbitre.arbitrePrenom + "<br>";
 			}
+			return liste;
 		} catch (SQLException e) {
-		    System.out.println("L'arbitre n'existe pas");
+			return "Il y a une erreur";
 		}
+		
 
 	}
 

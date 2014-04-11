@@ -39,7 +39,7 @@ public class AfficherMatch extends HttpServlet {
 		// invalide");
 		//doPost(request, response);
 		if(request.getSession().getAttribute("etat") != null){
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/afficherjoueursequipe.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/affichermatch.jsp");
 			dispatcher.forward(request, response);
 		}else{
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/login.jsp");

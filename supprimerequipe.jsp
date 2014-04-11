@@ -4,7 +4,7 @@
 1.Nom de l'equipe (obligatoire) : <INPUT TYPE="TEXT" NAME="nomEquipe"
   VALUE="">
 <BR>
-<INPUT TYPE="SUBMIT" NAME="supprimerEquipe"VALUE="Supprimer Equipe">
+<INPUT TYPE="SUBMIT" NAME="supprimerEquipe"VALUE="Supprimer l'equipe">
 </FORM>
 </CENTER>
 <BR>

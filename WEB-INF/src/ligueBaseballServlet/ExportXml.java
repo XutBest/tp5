@@ -1,6 +1,8 @@
 package ligueBaseballServlet;
 
 import java.io.IOException;
+import java.util.LinkedList;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -52,7 +54,6 @@ public class ExportXml extends HttpServlet {
 	
 	public void traiterCreerEquipe(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("THIS SHIT IS not yet WORKING");
 
 		try {
 			if (request.getParameter("nomEquipe") == null)
@@ -70,7 +71,12 @@ public class ExportXml extends HttpServlet {
 				System.out.println("THIS SHIT IS load page");
 			}
 		} catch (LigueBaseballException e) {
-			
+			List listeMessageErreur = new LinkedList();
+			listeMessageErreur.add(e.getMessage());
+			request.setAttribute("listeMessageErreur", listeMessageErreur);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/exportxml.jsp");
+			dispatcher.forward(request, response);
+		
 		} catch (Exception e) {
 		
 		}

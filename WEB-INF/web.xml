@@ -64,7 +64,7 @@
   </servlet>
   <servlet>
     <servlet-name>AfficherArbitre</servlet-name>
-    <servlet-class>ligueBaseballServlet.SupprimerEquipe</servlet-class>
+    <servlet-class>ligueBaseballServlet.AfficherArbitre</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>ArbitrerMatch</servlet-name>

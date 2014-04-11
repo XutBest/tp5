@@ -19,7 +19,7 @@
 6.Prenom de l'arbitre (obligatoire) : <INPUT TYPE="TEXT" NAME="prenomArbitre"
   VALUE="">
  <BR>
-<INPUT TYPE="SUBMIT" NAME="arbitrerMatch"VALUE="arbitrerMatch">
+<INPUT TYPE="SUBMIT" NAME="arbitrerMatch"VALUE="Assigner l'arbitre au match">
 </FORM>
 </CENTER>
 <BR>

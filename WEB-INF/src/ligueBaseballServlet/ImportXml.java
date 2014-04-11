@@ -1,6 +1,8 @@
 package ligueBaseballServlet;
 
 import java.io.IOException;
+import java.util.LinkedList;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -65,7 +67,11 @@ public class ImportXml extends HttpServlet {
 				dispatcher.forward(request, response);
 			}
 		} catch (LigueBaseballException e) {
-			
+			List listeMessageErreur = new LinkedList();
+			listeMessageErreur.add(e.getMessage());
+			request.setAttribute("listeMessageErreur", listeMessageErreur);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/importxml.jsp");
+			dispatcher.forward(request, response);
 		} catch (Exception e) {
 		
 		}

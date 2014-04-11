@@ -1,14 +1,13 @@
 package ligueBaseballServlet;
 
 import java.io.IOException;
-import java.util.LinkedList;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import ligueBaseball.GestionLigueBaseball;
 import ligueBaseball.LigueBaseballException;
@@ -21,7 +20,7 @@ import ligueBaseball.LigueBaseballException;
  */
 
 @SuppressWarnings("serial")
-public class SupprimerEquipe extends HttpServlet {
+public class AfficherArbitre extends HttpServlet {
 	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -40,40 +39,11 @@ public class SupprimerEquipe extends HttpServlet {
 		// invalide");
 		//doPost(request, response);
 		if(request.getSession().getAttribute("etat") != null){
-			if (request.getParameter("supprimerEquipe") != null)
-				traiterSupprimerEquipe(request, response);
-			else{
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/supprimerequipe.jsp");
-				dispatcher.forward(request, response);
-			}
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/afficherarbitre.jsp");
+			dispatcher.forward(request, response);
 		}else{
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/login.jsp");
 			dispatcher.forward(request, response);
-		}
-	}
-	
-	public void traiterSupprimerEquipe(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
-		
-		try {
-			String nomEquipe = request.getParameter("nomEquipe");
-			if (nomEquipe == null ||nomEquipe.isEmpty()){
-				throw new LigueBaseballException("Impossible de supprimer une equipe sans nom d'equipe");
-			}else{
-				
-				GestionLigueBaseball.gestionEquipe.supprimer(nomEquipe);
-				RequestDispatcher dispatcher = request
-						.getRequestDispatcher("/menu.jsp");
-				dispatcher.forward(request, response);
-			}
-		} catch (LigueBaseballException e) {
-			List listeMessageErreur = new LinkedList();
-			listeMessageErreur.add(e.getMessage());
-			request.setAttribute("listeMessageErreur", listeMessageErreur);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/supprimerequipe.jsp");
-			dispatcher.forward(request, response);
-		} catch (Exception e) {
-		
 		}
 	}
 

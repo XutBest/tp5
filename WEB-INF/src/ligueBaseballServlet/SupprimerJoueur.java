@@ -1,6 +1,8 @@
 package ligueBaseballServlet;
 
 import java.io.IOException;
+import java.util.LinkedList;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -38,10 +40,10 @@ public class SupprimerJoueur extends HttpServlet {
 		// invalide");
 		//doPost(request, response);
 		if(request.getSession().getAttribute("etat") != null){
-			if (request.getParameter("SupprimerJoueur") != null)
+			if (request.getParameter("supprimerJoueur") != null)
 				traiterSupprimerJoueur(request, response);
 			else{
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/supprimmerjoueur.jsp");
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/supprimerjoueur.jsp");
 				dispatcher.forward(request, response);
 			}
 		}else{
@@ -55,9 +57,10 @@ public class SupprimerJoueur extends HttpServlet {
 			HttpServletResponse response) throws ServletException, IOException {
 		
 		try {
-			if (request.getParameter("nomJoueur") == null || request.getParameter("prenomJoueur") == null || request.getParameter("nomJoueur").isEmpty() || request.getParameter("prenomJoueur").isEmpty())
+			if ( request.getParameter("nomJoueur").isEmpty() || request.getParameter("prenomJoueur").isEmpty()){
+				System.out.println("suprimer jouer??");
 				throw new LigueBaseballException("Impossible de supprimer un joueur sans nom et prenom");
-			else{
+			}else{
 				String prenom = request.getParameter("prenomJoueur");
 				String nom = request.getParameter("nomJoueur");
 				GestionLigueBaseball.gestionJoueur.supprimer(nom, prenom);
@@ -66,7 +69,11 @@ public class SupprimerJoueur extends HttpServlet {
 				dispatcher.forward(request, response);
 			}
 		} catch (LigueBaseballException e) {
-			
+			List listeMessageErreur = new LinkedList();
+			listeMessageErreur.add(e.getMessage());
+			request.setAttribute("listeMessageErreur", listeMessageErreur);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/supprimerjoueur.jsp");
+			dispatcher.forward(request, response);
 		} catch (Exception e) {
 		
 		}

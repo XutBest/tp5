@@ -3,6 +3,8 @@ package ligueBaseballServlet;
 import java.io.IOException;
 import java.sql.Date;
 import java.sql.SQLException;
+import java.util.LinkedList;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -41,10 +43,10 @@ public class CreerArbitre extends HttpServlet {
 		// invalide");
 		//doPost(request, response);
 		if(request.getSession().getAttribute("etat") != null){
-			if (request.getParameter("creerarbitre") != null)
+			if (request.getParameter("creerArbitre") != null)
 				traiterCreerArbitre(request, response);
 			else{
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/creerArbitre.jsp");
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/creerarbitre.jsp");
 				dispatcher.forward(request, response);
 			}
 		}else{
@@ -70,7 +72,11 @@ public class CreerArbitre extends HttpServlet {
 				dispatcher.forward(request, response);
 			}
 		} catch (LigueBaseballException e) {
-			
+			List listeMessageErreur = new LinkedList();
+			listeMessageErreur.add(e.getMessage());
+			request.setAttribute("listeMessageErreur", listeMessageErreur);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/creerarbitre.jsp");
+			dispatcher.forward(request, response);
 		} catch (Exception e) {
 		
 		}
