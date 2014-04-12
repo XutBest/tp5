@@ -12,14 +12,21 @@
   //if (request.getParameter("supprimerEquipe") != null){
   	GestionLigueBaseball ligueBaseball = (GestionLigueBaseball) session.getAttribute("baseball");
   	String content = "";
+  	try{
   	if (request.getParameter("nomEquipe") == null){
   %>
   		<%= ligueBaseball.gestionJoueur.getJoueur()%>
-  <%	
+  <%
 	}else{
 	%>
 		<%=ligueBaseball.gestionJoueur.getJoueur(request.getParameter("nomEquipe"))%>
 	<%
+	}
+	}
+	catch(LigueBaseballException e){
+		List listeMessageErreur = new LinkedList();
+		listeMessageErreur.add(e.getMessage());
+		request.setAttribute("listeMessageErreur", listeMessageErreur);
 	}
  //}
 %>

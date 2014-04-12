@@ -38,11 +38,12 @@ public class AfficherJoueursEquipe extends HttpServlet {
 		// response.sendError(response.SC_INTERNAL_SERVER_ERROR, "Acc�s
 		// invalide");
 		//doPost(request, response);
-		if(request.getSession().getAttribute("etat") != null){
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/afficherjoueursequipe.jsp");
-			dispatcher.forward(request, response);
-		}else{
+		if(request.getSession().getAttribute("etat") == null){
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/login.jsp");
+			dispatcher.forward(request, response);
+		}
+		else{
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/afficherjoueursequipe.jsp");
 			dispatcher.forward(request, response);
 		}
 	}

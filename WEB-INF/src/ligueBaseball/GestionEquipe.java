@@ -189,6 +189,7 @@ public class GestionEquipe {
 			cx.commit();
 		} catch (Exception e) {
 			cx.rollback();
+			throw e;
 		}
 	}
 
@@ -212,6 +213,7 @@ public class GestionEquipe {
 			cx.commit();
 		} catch (Exception e) {
 			cx.rollback();
+			throw e;
 		}
 	}
 
@@ -237,6 +239,7 @@ public class GestionEquipe {
 			cx.commit();
 		} catch (Exception e) {
 			cx.rollback();
+			throw e;
 		}
 	}
 

@@ -41,6 +41,7 @@ public class GestionArbitre {
 			cx.commit();
 		} catch (Exception e) {
 		    cx.rollback();
+		    throw e;
 		}
 
 	}
@@ -71,11 +72,10 @@ public class GestionArbitre {
 	 * @param equipeNomVisiteur
 	 * @param arbitreNom
 	 * @param arbitrePrenom
-	 * @throws LigueBaseballException
-	 * @throws SQLException 
+	 * @throws Exception 
 	 */
 	public void arbitrerMatch(java.sql.Date matchDate, java.sql.Time matchHeure, String equipeNomLocal, 
-			String equipeNomVisiteur, String arbitreNom, String arbitrePrenom) throws LigueBaseballException, SQLException {
+			String equipeNomVisiteur, String arbitreNom, String arbitrePrenom) throws Exception {
 		try {
 			int arbitreId = arbitre.existe(arbitreNom, arbitrePrenom);
 			if(arbitreId == -1)
@@ -95,6 +95,7 @@ public class GestionArbitre {
 				
 		} catch (Exception e) {
 		    cx.rollback();
+		    throw e;
 		}
 	}
 

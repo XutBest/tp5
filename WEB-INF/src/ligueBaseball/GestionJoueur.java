@@ -43,6 +43,7 @@ public class GestionJoueur {
 		}
 		catch (Exception e){
 			cx.rollback();
+			throw e;
 		}
 	}
 	
@@ -69,6 +70,7 @@ public class GestionJoueur {
 		}
 		catch (Exception e){
 			cx.rollback();
+			throw e;
 		}
 	}
 	
@@ -90,6 +92,7 @@ public class GestionJoueur {
 			cx.commit();
 		} catch (Exception e) {
 			cx.rollback();
+			throw e;
 		}
 	}
 
@@ -113,6 +116,7 @@ public class GestionJoueur {
 			cx.commit();
 		} catch (Exception e) {
 			cx.rollback();
+			throw e;
 		}
 	}
 	
@@ -130,8 +134,9 @@ public class GestionJoueur {
 			equipeId = -2;
 		else
 			equipeId = equipe.existe(nomEquipe);
-		if(equipeId == -1)
-			return content;
+		if(equipeId == -1){
+			throw new LigueBaseballException("L'equipe n'existe pas ( " + nomEquipe + " )");
+		}
 		try{
 			List<TupleJoueur> tj;
 			if(equipeId != -2)

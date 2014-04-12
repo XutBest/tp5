@@ -31,9 +31,9 @@ public class GestionMatch {
 	 * @param matchHeure
 	 * @param equipeLocal
 	 * @param equipeVisiteur
-	 * @throws SQLException
+	 * @throws Exception 
 	 */
-	public void ajout(Date matchDate, Time matchHeure, String equipeLocal, String equipeVisiteur) throws SQLException{
+	public void ajout(Date matchDate, Time matchHeure, String equipeLocal, String equipeVisiteur) throws Exception{
 		try {
 			int equipeLocalId = equipe.existe(equipeLocal);
 			if (equipeLocalId == -1)
@@ -54,6 +54,7 @@ public class GestionMatch {
 			cx.commit();
 		} catch (Exception e) {
 			cx.rollback();
+			throw e;
 		}
 	}
 	
@@ -65,9 +66,9 @@ public class GestionMatch {
 	 * @param equipeVisiteur
 	 * @param pointsLocal
 	 * @param pointsVisiteur
-	 * @throws SQLException
+	 * @throws Exception 
 	 */
-	public void entrerPointage(Date matchDate, Time matchHeure, String equipeLocal, String equipeVisiteur, int pointsLocal, int pointsVisiteur) throws SQLException{
+	public void entrerPointage(Date matchDate, Time matchHeure, String equipeLocal, String equipeVisiteur, int pointsLocal, int pointsVisiteur) throws Exception{
 		try {
 			int matchId = match.existe(matchDate, matchHeure, equipeLocal, equipeVisiteur);
 			if(matchId == -1)
@@ -77,6 +78,7 @@ public class GestionMatch {
 			cx.commit();
 		} catch (Exception e) {
 			cx.rollback();
+			throw e;
 		}
 	}
 

@@ -86,8 +86,6 @@ public class AjoutEquipe extends HttpServlet {
 			dispatcher.forward(request, response);
 		} catch (Exception e) {
 		
-		} finally
-		{
 		}
 	}
 
