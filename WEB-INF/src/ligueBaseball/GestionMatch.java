@@ -73,7 +73,7 @@ public class GestionMatch {
 			int matchId = match.existe(matchDate, matchHeure, equipeLocal, equipeVisiteur);
 			if(matchId == -1)
 				throw new LigueBaseballException("Match n'existe pas!");
-			if(pointsLocal >= 0 && pointsVisiteur > 0)
+			if(pointsLocal >= 0 && pointsVisiteur >= 0)
 				match.updatePointage(matchId, pointsLocal, pointsVisiteur);
 			cx.commit();
 		} catch (Exception e) {

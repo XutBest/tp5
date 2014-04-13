@@ -125,13 +125,18 @@ public class Joueur {
 		}
 		int joueurId = getMaxJoueurId();
 
+		ajoutJoueur(joueurNom, joueurPrenom);
+		
 		stmtInsertWithEquipe.setInt(1, joueurId);
 		stmtInsertWithEquipe.setInt(2, equipeId);
 		stmtInsertWithEquipe.setInt(3, numero);
 
-		stmtInsertWithEquipe.setDate(4, dateDebut);
+		java.util.Calendar cal = java.util.Calendar.getInstance();
+		java.util.Date utilDate = cal.getTime();
+		java.sql.Date sqlDate = new Date(utilDate.getTime());
+		stmtInsertWithEquipe.setDate(4, sqlDate);
+		stmtInsertWithEquipe.executeUpdate();
 
-		ajoutJoueur(joueurNom, joueurPrenom);
 	}
 
 	public boolean numeroExiste(String equipe, int numero) throws SQLException {
