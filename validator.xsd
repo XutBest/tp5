@@ -22,7 +22,7 @@
                       <xs:attribute type="xs:string" name="nom" use="optional"/>
                       <xs:attribute type="xs:string" name="prenom" use="optional"/>
                       <xs:attribute type="xs:byte" name="numero" use="optional"/>
-                      <xs:attribute type="xs:date" name="dateDebut" use="optional"/>
+                      <xs:attribute type="xs:string" name="datedebut" use="optional"/>
                     </xs:extension>
                   </xs:simpleContent>
                 </xs:complexType>
