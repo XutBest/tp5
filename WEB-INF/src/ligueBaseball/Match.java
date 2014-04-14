@@ -44,26 +44,9 @@ public class Match {
 		stmtMaxId = cx.getConnection().prepareStatement(
 				"select max(matchid) from match");
 		stmtUpdatePoints = cx.getConnection().prepareStatement("update match set pointslocal=?, pointsvisiteur=? where matchid = ?");
-		stmtTousResultats = cx.getConnection().prepareStatement(
-				"select pointslocal, pointsvisiteur, array_to_string(array_agg(arbitre.arbitrenom),',')"
-				+ " from match left outer join arbitrer on arbitrer.matchid = match.matchid "
-				+ "left outer join arbitre on arbitre.arbitreid = arbitrer.arbitreid "
-				+ "where pointslocal is not null "
-				+ "group by pointslocal, pointsvisiteur, matchdate order by matchdate");
-		stmtTousResultatsDate = cx.getConnection().prepareStatement(
-				"select pointslocal, pointsvisiteur, array_to_string(array_agg(arbitre.arbitrenom),',')"
-				+ " from match left outer join arbitrer on arbitrer.matchid = match.matchid "
-				+ "left outer join arbitre on arbitre.arbitreid = arbitrer.arbitreid "
-				+ "where pointslocal is not null and match.matchdate >= ? "
-				+ "group by pointslocal, pointsvisiteur, matchdate order by matchdate");
-		stmtTousResultatsEquipe = cx.getConnection().prepareStatement(
-				"select pointslocal, pointsvisiteur, array_to_string(array_agg(arbitre.arbitrenom),',') "
-				+ "from match left outer join arbitrer on arbitrer.matchid = match.matchid "
-				+ "left outer join arbitre on arbitre.arbitreid = arbitrer.arbitreid "
-				+ "left outer join equipe e1 on e1.equipeid = match.equipelocal "
-				+ "left outer join equipe e2 on e2.equipeid = match.equipevisiteur "
-				+ "where pointslocal is not null and (e1.equipenom = ? or e2.equipenom = ?) "
-				+ "group by pointslocal, pointsvisiteur, matchdate order by matchdate");
+		stmtTousResultats = cx.getConnection().prepareStatement("select pointslocal, pointsvisiteur, matchDate, matchHeure, e1.equipeNom,e2.equipeNom, array_to_string(array_agg(arbitre.arbitrenom),',') from equipe e1, equipe e2 , match left outer join arbitrer on arbitrer.matchid = match.matchid left outer join arbitre on arbitre.arbitreid = arbitrer.arbitreid where pointslocal is not null  AND e1.equipeid = match.equipeLocal AND e2.equipeid = match.equipeVisiteur group by pointslocal, pointsvisiteur, matchDate, matchHeure, matchdate, e1.equipeNom,e2.equipeNom order by matchdate");
+		stmtTousResultatsDate = cx.getConnection().prepareStatement("select pointslocal, pointsvisiteur, matchDate, matchHeure, e1.equipeNom,e2.equipeNom, array_to_string(array_agg(arbitre.arbitrenom),',') from equipe e1, equipe e2 , match left outer join arbitrer on arbitrer.matchid = match.matchid left outer join arbitre on arbitre.arbitreid = arbitrer.arbitreid where pointslocal is not null and match.matchdate >= ? AND e1.equipeid = equipeLocal AND e2.equipeid = equipeVisiteur group by pointslocal, pointsvisiteur, matchDate, matchHeure, matchdate, e1.equipeNom,e2.equipeNom order by matchdate");
+		stmtTousResultatsEquipe = cx.getConnection().prepareStatement("select pointslocal, pointsvisiteur, matchDate, matchHeure, e1.equipeNom,e2.equipeNom, array_to_string(array_agg(arbitre.arbitrenom),',') from match left outer join arbitrer on arbitrer.matchid = match.matchid left outer join arbitre on arbitre.arbitreid = arbitrer.arbitreid left outer join equipe e1 on e1.equipeid = match.equipelocal left outer join equipe e2 on e2.equipeid = match.equipevisiteur where pointslocal is not null and (e1.equipenom = ? or e2.equipenom = ?) group by pointslocal, pointsvisiteur, matchDate, matchHeure, matchdate, e1.equipeNom,e2.equipeNom  order by matchdate");
 		//stmtGetTerrainId = cx.getConnection().prepareStatement("select terrainid from equipe where equipeid = ?");
 	}
 	
@@ -148,7 +131,7 @@ public class Match {
 		List<TupleMatch> list = new ArrayList<TupleMatch>();
 		ResultSet rset = stmtTousResultats.executeQuery();
 		while(rset.next()){
-			list.add(new TupleMatch(rset.getInt(1), rset.getInt(2), rset.getString(3)));
+			list.add(new TupleMatch(rset.getInt(1), rset.getInt(2), rset.getDate(3),rset.getTime(4),rset.getString(5),rset.getString(6),rset.getString(7)));
 		}
 		return list;
 	}
@@ -163,7 +146,7 @@ public class Match {
 		stmtTousResultatsDate.setDate(1, date);
 		ResultSet rset = stmtTousResultatsDate.executeQuery();
 		while(rset.next()){
-			list.add(new TupleMatch(rset.getInt(1), rset.getInt(2), rset.getString(3)));
+			list.add(new TupleMatch(rset.getInt(1), rset.getInt(2), rset.getDate(3),rset.getTime(4),rset.getString(5),rset.getString(6),rset.getString(7)));
 		}
 		return list;
 	}
@@ -179,7 +162,7 @@ public class Match {
 		stmtTousResultatsEquipe.setString(2, equipe);
 		ResultSet rset = stmtTousResultatsEquipe.executeQuery();
 		while(rset.next()){
-			list.add(new TupleMatch(rset.getInt(1), rset.getInt(2), rset.getString(3)));
+			list.add(new TupleMatch(rset.getInt(1), rset.getInt(2), rset.getDate(3),rset.getTime(4),rset.getString(5),rset.getString(6),rset.getString(7)));
 		}
 		return list;
 	}
