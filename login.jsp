@@ -1,4 +1,3 @@
-<%@ page import="java.util.*,java.text.*" contentType="text/html; charset=UTF-8" pageEncoding="ISO-8859-1"%>
 <%@ include file="/WEB-INF/jspf/header.jspf" %> 
 
 		<FORM ACTION="Login" METHOD="POST" role="form">

@@ -1,8 +1,8 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <HTML>
+<%@ page import="java.util.*,java.text.*,ligueBaseball.*" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 	<HEAD>
 		<TITLE>IFT287 - Système de gestion de ligue de baseball</TITLE>
-		<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
 		<META NAME="author" CONTENT="Vincent Gagnon">
 		<META NAME="description" CONTENT="Page d'accueil système de gestion de ligue de Baseball">
 		

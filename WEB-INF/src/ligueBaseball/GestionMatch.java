@@ -5,6 +5,8 @@ import java.sql.SQLException;
 import java.sql.Time;
 import java.util.List;
 
+import com.sun.org.apache.xerces.internal.impl.dtd.models.DFAContentModel;
+
 /**
  *  * @author Mathieu Lavoie, Alex Provencher et Vincent Gagnon
  * classe intermedaire entre l'usager et les object qui parle a la base de donnee.
@@ -93,7 +95,7 @@ public class GestionMatch {
 		    
 		String match = "Local-Visiteur : Liste des arbitres" + "<br>";
 		for (TupleMatch tupleMatch : list) {
-			match += tupleMatch.PointageLocal + "-" + tupleMatch.PointageVisiteur + " : " + tupleMatch.ListeArbitres + "<br>";
+			match += "Match opposant : "+tupleMatch.nomEquipeVisiteur+" VS "+tupleMatch.nomEquipeLocal+", score final: "+tupleMatch.PointageLocal + "-" + tupleMatch.PointageVisiteur + " : " +tupleMatch.matchDate +" à "+tupleMatch.matchHeure + ". Arbitré par : " + tupleMatch.ListeArbitres + "<br>";
 		}
 		return match;
 	}
@@ -104,16 +106,16 @@ public class GestionMatch {
 	 * @throws SQLException
 	 * @throws LigueBaseballException 
 	 */
-	public void afficherResultatDate(Date date) throws SQLException, LigueBaseballException {
+	public String afficherResultatDate(Date date) throws SQLException, LigueBaseballException {
 		List<TupleMatch> list = match.afficherResultat(date);
 		if(list.size()==0){
 		    throw new LigueBaseballException("Il n'y a aucun match a afficher");
 		}
-		
-		System.out.println("Local-Visiteur : Liste des arbitres");
+		String match = "Local-Visiteur : Liste des arbitres" + "<br>";
 		for (TupleMatch tupleMatch : list) {
-			System.out.println(tupleMatch.PointageLocal + "-" + tupleMatch.PointageVisiteur + " : " + tupleMatch.ListeArbitres);
+			match += "Match opposant : "+tupleMatch.nomEquipeVisiteur+" VS "+tupleMatch.nomEquipeLocal+", score final: "+tupleMatch.PointageLocal + "-" + tupleMatch.PointageVisiteur + " : " +tupleMatch.matchDate +" à "+tupleMatch.matchHeure + ". Arbitré par : " + tupleMatch.ListeArbitres + "<br>";
 		}
+		return match;
 	}
 	
 	/**
@@ -122,18 +124,53 @@ public class GestionMatch {
 	 * @throws SQLException
 	 * @throws LigueBaseballException 
 	 */
-	public void afficherResultatDate(String nomEquipe) throws SQLException, LigueBaseballException {
+	public String afficherResultatDate(String nomEquipe) throws SQLException, LigueBaseballException {
 	    if(equipe.existe(nomEquipe) == -1)
-		throw new LigueBaseballException("equipe inexistante");
+		throw new LigueBaseballException("Équipe inexistante");
 	    
 	    List<TupleMatch> list = match.afficherResultat(nomEquipe);
 	    if(list.size()==0){
 		throw new LigueBaseballException("Il n'y a aucun match a afficher");
 	    }
-	    System.out.println("Local-Visiteur : Liste des arbitres");
+	    String match = "Local-Visiteur : Liste des arbitres" + "<br>";
 		for (TupleMatch tupleMatch : list) {
-			System.out.println(tupleMatch.PointageLocal + "-" + tupleMatch.PointageVisiteur + " : " + tupleMatch.ListeArbitres);
+			match += "Match opposant : "+tupleMatch.nomEquipeVisiteur+" VS "+tupleMatch.nomEquipeLocal+", score final: "+tupleMatch.PointageLocal + "-" + tupleMatch.PointageVisiteur + " : " +tupleMatch.matchDate +" à "+tupleMatch.matchHeure + ". Arbitré par : " + tupleMatch.ListeArbitres + "<br>";
+		}
+		return match;
+	}
+
+	public String afficherResultat(String dateOuEquipe) throws SQLException, LigueBaseballException {
+		if(equipe.existe(dateOuEquipe) == -1){
+		    Date date;
+		    try {
+		    	date = java.sql.Date.valueOf(dateOuEquipe);
+		    	List<TupleMatch> list = match.afficherResultat(date);
+				if(list.size()==0){
+				    throw new LigueBaseballException("Il n'y a aucun match a afficher");
+				}
+				String match = "Local-Visiteur : Liste des arbitres" + "<br>";
+				for (TupleMatch tupleMatch : list) {
+					match += "Match opposant : "+tupleMatch.nomEquipeVisiteur+" VS "+tupleMatch.nomEquipeLocal+", score final: "+tupleMatch.PointageLocal + "-" + tupleMatch.PointageVisiteur + " : " +tupleMatch.matchDate +" à "+tupleMatch.matchHeure + ". Arbitré par : " + tupleMatch.ListeArbitres + "<br>";
+				}
+				return match;
+		    } catch (Exception e) {
+		    	throw new LigueBaseballException("Veuillez entrer une date valide ou une equipe.");
+		    }    
+	    }
+		else{
+			List<TupleMatch> list = match.afficherResultat(dateOuEquipe);
+		    if(list.size()==0){
+			throw new LigueBaseballException("Il n'y a aucun match a afficher");
+		    }
+		    String match = "Local-Visiteur : Liste des arbitres" + "<br>";
+			for (TupleMatch tupleMatch : list) {
+				match += "Match opposant : "+tupleMatch.nomEquipeVisiteur+" VS "+tupleMatch.nomEquipeLocal+", score final: "+tupleMatch.PointageLocal + "-" + tupleMatch.PointageVisiteur + " : " +tupleMatch.matchDate +" à "+tupleMatch.matchHeure + ". Arbitré par : " + tupleMatch.ListeArbitres + "<br>";
+			}
+			return match;
 		}
 	}
+
+	
+	
 	
 }

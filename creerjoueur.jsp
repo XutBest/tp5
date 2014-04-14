@@ -1,4 +1,3 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <%@ include file="/WEB-INF/jspf/header.jspf" %> 
 <BR>
 <FORM ACTION="CreerJoueur" METHOD="POST">
