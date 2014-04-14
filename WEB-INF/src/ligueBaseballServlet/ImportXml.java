@@ -61,7 +61,8 @@ public class ImportXml extends HttpServlet {
 				throw new LigueBaseballException("Impossible de creer une equipe sans nom d'equipe");
 			else{
 				String path = request.getParameter("path");
-				GestionLigueBaseball.gestionEquipe.importerXML(path);
+				String path2 = getServletContext().getRealPath("\\");
+				GestionLigueBaseball.gestionEquipe.importerXML(path, path2);
 				RequestDispatcher dispatcher = request
 						.getRequestDispatcher("/menu.jsp");
 				dispatcher.forward(request, response);

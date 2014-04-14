@@ -25,6 +25,7 @@ import org.apache.xerces.validators.common.XMLValidator;
 import org.jdom2.*;
 import org.jdom2.input.*;
 import org.jdom2.output.*;
+import org.omg.CORBA.Request;
 
 import sun.security.validator.ValidatorException;
 
@@ -102,12 +103,12 @@ public class GestionEquipe {
 	}
 	
 	
-	public void importerXML(String path)
+	public void importerXML(String path, String path2)
 	{
 		SAXBuilder sb = new SAXBuilder();
 		try
 		{
-			boolean ok = validationXML(path);
+			boolean ok = validationXML(path, path2);
 			if(ok){
 				Document document = sb.build(path);
 				Element equipe = document.getRootElement();
@@ -141,7 +142,7 @@ public class GestionEquipe {
 		}
 	}
 	
-	public boolean validationXML(String path){
+	public boolean validationXML(String path, String path2){
 		boolean validSchema = true;
 		SAXParser parser = new SAXParser();
 		try{
@@ -150,7 +151,7 @@ public class GestionEquipe {
 			parser.setFeature("http://apache.org/xml/features/validation/schema", true); 
 			parser.setFeature("http://apache.org/xml/features/validation/schema-full-checking",true); 
 			parser.setProperty("http://apache.org/xml/properties/schema/external-noNamespaceSchemaLocation", 
-					"validator.xsd");
+					"file:" + path2 +"validator.xsd");
 			
 			Validator handler = new Validator();
 			parser.setErrorHandler(handler);
