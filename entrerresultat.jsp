@@ -19,7 +19,7 @@
 6.Pointage visiteur (obligatoire) : <INPUT TYPE="TEXT" NAME="pointVisiteur"
   VALUE="">
  <BR>
-<INPUT TYPE="SUBMIT" NAME="entrerResultat"VALUE="Sauvegarder les résultats">
+<INPUT TYPE="SUBMIT" NAME="entrerResultat"VALUE="Sauvegarder les r&#233;sultats">
 </FORM>
 </CENTER>
 <BR>

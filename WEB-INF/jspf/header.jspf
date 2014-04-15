@@ -12,11 +12,77 @@
 		
 	    <!-- Custom styles for this template -->
 	    <link href="style.css" rel="stylesheet">
+	    
+	    <!-- jQuery via Google + local fallback, see h5bp.com -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="js/jquery-1.7.1.min.js"><\/script>')</script>
+
+		<!-- Bootstrap jQuery Plugins, compiled and minified -->
+		<script src="./dist/js/bootstrap.min.js"></script>
+ 
 	</HEAD>
 	
 	
 	<BODY>
-		
-		<H1>Gestion de ligue de baseball</H1>
+		<img src="baseballHeader.jpg" alt="Gestion de ligue de baseball">
 	
-	
+	 
+ <div class="btn-group">
+  <div class="btn-group">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+      Equipes
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      <li><a href="ajoutequipe">Creer Equipe</a></li>
+      <li><a href="afficherEquipe">Afficher Equipes</a><li>
+	  <li><a href="supprimerEquipe">Supprimer Equipe</a><li>
+    </ul>
+  </div>
+  <div class="btn-group">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+      Joueurs
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+		<li><a href="creerjoueur">Creer un joueur</a><li>
+		<li><a href="afficherJoueursEquipe">Afficher les joueurs</a><li>
+		<li><a href="supprimerJoueur">Supprimer un joueur</a><li>
+    </ul>
+  </div>
+
+  <div class="btn-group">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+      Arbitres
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+		<li><a href="creerArbitre">Creer un arbitre</a><li>
+		<li><a href="afficherArbitre">Afficher les arbitres</a><li>
+		<li><a href="arbitrerMatch">Assigner un arbitre a un match</a><li>
+    </ul>
+  </div>
+  <div class="btn-group">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+      Match
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+		<li><a href="creerMatch">Creer un match</a><li>
+		<li><a href="entrerResultat">Entrer les resultats d'un match</a><li>
+		<li><a href="afficherResultats">Afficher resultats</a><li>
+    </ul>
+  </div>
+  <div class="btn-group">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+      XML
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+		<li><a href="ExportXml">Exporter un XML</a><li>
+		<li><a href="ImportXml">Importer un XML</a><li>
+    </ul>
+  </div>
+</div>
+
+<br>

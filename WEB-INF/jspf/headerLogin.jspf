@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<%@ page import="java.util.*,java.text.*,ligueBaseball.*" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+	<HEAD>
+		<TITLE>IFT287 - Système de gestion de ligue de baseball</TITLE>
+		<META NAME="author" CONTENT="Vincent Gagnon">
+		<META NAME="description" CONTENT="Page d'accueil système de gestion de ligue de Baseball">
+		
+		
+	    <!-- Bootstrap core CSS -->
+	    <link type="text/css" href="./dist/css/bootstrap.css" rel="stylesheet">
+		
+	    <!-- Custom styles for this template -->
+	    <link href="style.css" rel="stylesheet">
+	    
+	    <!-- jQuery via Google + local fallback, see h5bp.com -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="js/jquery-1.7.1.min.js"><\/script>')</script>
+
+		<!-- Bootstrap jQuery Plugins, compiled and minified -->
+		<script src="./dist/js/bootstrap.min.js"></script>
+ 
+	</HEAD>
+	
+	
+	<BODY>
+		<img src="baseballHeader.jpg" alt="Gestion de ligue de baseball">
+	
+	

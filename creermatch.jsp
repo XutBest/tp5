@@ -14,7 +14,7 @@
   VALUE="">
  <BR>
 <BR>
-<INPUT TYPE="SUBMIT" NAME="creerMatch"VALUE="Ajouter le match à la base de donnée">
+<INPUT TYPE="SUBMIT" NAME="creerMatch"VALUE="Ajouter le match à la base de donn&#233;e">
 </FORM>
 </CENTER>
 <BR>¸

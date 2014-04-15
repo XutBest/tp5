@@ -2,7 +2,7 @@
 	    <div class="footer">
 		    <%-- Appel du servlet Logout pour revenir au menu login--%>
 			<a href="Logout" class ="btn btn-danger"><span class="glyphicon glyphicon-remove"></span>Sortir</a>
-			<a href="Menu" class ="btn btn-success"><span class="glyphicon glyphicon-list-alt"></span> Menu</a>	    
+			<a href="Menu" class ="btn btn-success"><span class="glyphicon glyphicon-list-alt"></span> Page d'accueil</a>	    
     		<p class="text-right">&copy; Ligue de baseball 2014</p>
 	    	 
 	    </div>

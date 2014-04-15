@@ -1,36 +1,9 @@
-<%@ include file="/WEB-INF/jspf/header.jspf" %> 
-
-<a class="btn btn-default" href="ajoutequipe">Creer Equipe</a>
-<BR>
-<a class="btn btn-default" href="afficherEquipe">Afficher Equipes</a>
-<BR>
-<a class="btn btn-default" href="supprimerEquipe">Supprimer Equipe</a>
-<BR>
-<a class="btn btn-default" href="creerjoueur">Creer joueur</a>
-<BR>
-<a class="btn btn-default" href="afficherJoueursEquipe">Afficher joueur equipe</a>
-<BR>
-<a class="btn btn-default" href="supprimerJoueur">Supprimer joueur</a>
-<BR>
-<a class="btn btn-default" href="creerMatch">Creer match</a>
-<BR>
-<a class="btn btn-default" href="creerArbitre">Creer arbitre</a>
-<BR>
-<a class="btn btn-default" href="afficherArbitre">Afficher arbitre</a>
-<BR>
-<a class="btn btn-default" href="arbitrerMatch">Assigner un arbitre a un match</a>
-<BR>
-<a class="btn btn-default" href="entrerResultat">Entrer les resultats</a>
-<BR>
-<a class="btn btn-default" href="afficherResultats">Afficher resultats</a>
-
-
-
-<BR>
-<a class="btn btn-default" href="ExportXml">Exporter Equipe XML</a>
-<BR>
-<a class="btn btn-default" href="ImportXml">Importer Equipe XML</a>
+<%@ include file="/WEB-INF/jspf/header.jspf" %>
+ 
+Voici une application web qui vous permet de faire la gestion d'une ligue de baseball simplement. 
+<br>
+S&#233;lectionner n'importe quel des options pour 
 
 <%-- inclusion d'une autre page pour l'affichage des messages d'erreur--%>
 <jsp:include page="/WEB-INF/messageErreur.jsp" />
-<%@ include file="/WEB-INF/jspf/footer.jspf" %> 
+<%@ include file="/WEB-INF/jspf/footer.jspf" %>
