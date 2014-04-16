@@ -1,0 +1,16 @@
+<?xml version="1.0"?> 
+<equipe nom="Rangers"> 
+ <terrain nom="Rangers Ballpark" adresse="1000 Ballpark Way, Arlington, Texas 76011" /> 
+ <joueurs> 
+ <joueur nom="Benoit" prenom="Joaquin" numero="53" datedebut="15-01-2008" /> 
+ <joueur nom="Francisco" prenom="Frank" numero="50" datedebut="15-01-2008" /> 
+ <joueur nom="Guardado" prenom="Eddie" numero="18" datedebut="15-01-2008" /> 
+ <joueur nom="Laird" prenom="Gerald" numero="15" datedebut="15-01-2008" /> 
+ <joueur nom="Jennings" prenom="Jason" numero="31" datedebut="15-01-2008" /> 
+ <joueur nom="Vazquez" prenom="Ramon" numero="12" datedebut="15-01-2008" /> 
+ <joueur nom="Catalanotto" prenom="Frank" numero="27" datedebut="15-01-2008" /> 
+ <joueur nom="Cruz" prenom="Nelson" numero="17" datedebut="15-01-2008" /> 
+ <joueur nom="Murphy" prenom="David" numero="7" datedebut="15-01-2008" /> 
+ <joueur nom="Young" prenom="Michael" numero="10" datedebut="15-01-2008" /> 
+ </joueurs> 
+</equipe>

@@ -14,9 +14,9 @@
   VALUE="">
  <BR>
 <BR>
-<INPUT TYPE="SUBMIT" NAME="creerMatch"VALUE="Ajouter le match à la base de donn&#233;e">
+<INPUT TYPE="SUBMIT" NAME="creerMatch"VALUE="Ajouter le match a la base de donn&#233;e">
 </FORM>
 </CENTER>
-<BR>¸
+<BR>
 <%@ include file="/WEB-INF/jspf/messageErreur.jspf" %>
 <%@ include file="/WEB-INF/jspf/footer.jspf" %> 

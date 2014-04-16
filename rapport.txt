@@ -1,0 +1,4 @@
+L'implantation du tp3 à été facile étant donné que nous avions déjà utilisé une architecture MVC partout dans notre TP3.
+Nous n'avons pas eu besoin de trop de changements avec le TP5. 
+
+Nous avons donc au final implmenter le modèle MVC partout dans notre projet et ce sans vraiment de problème. 

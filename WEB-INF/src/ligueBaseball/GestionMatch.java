@@ -132,7 +132,7 @@ public class GestionMatch {
 	    if(list.size()==0){
 		throw new LigueBaseballException("Il n'y a aucun match a afficher");
 	    }
-	    String match = "Local-Visiteur : Liste des arbitres" + "<br>";
+	    String match = "<br>";
 		for (TupleMatch tupleMatch : list) {
 			match += "Match opposant : "+tupleMatch.nomEquipeVisiteur+" VS "+tupleMatch.nomEquipeLocal+", score final: "+tupleMatch.PointageLocal + "-" + tupleMatch.PointageVisiteur + " : " +tupleMatch.matchDate +" à "+tupleMatch.matchHeure + ". Arbitré par : " + tupleMatch.ListeArbitres + "<br>";
 		}
@@ -148,7 +148,7 @@ public class GestionMatch {
 				if(list.size()==0){
 				    throw new LigueBaseballException("Il n'y a aucun match a afficher");
 				}
-				String match = "Local-Visiteur : Liste des arbitres" + "<br>";
+				String match = "<br>";
 				for (TupleMatch tupleMatch : list) {
 					match += "Match opposant : "+tupleMatch.nomEquipeVisiteur+" VS "+tupleMatch.nomEquipeLocal+", score final: "+tupleMatch.PointageLocal + "-" + tupleMatch.PointageVisiteur + " : " +tupleMatch.matchDate +" à "+tupleMatch.matchHeure + ". Arbitré par : " + tupleMatch.ListeArbitres + "<br>";
 				}
@@ -162,7 +162,7 @@ public class GestionMatch {
 		    if(list.size()==0){
 			throw new LigueBaseballException("Il n'y a aucun match a afficher");
 		    }
-		    String match = "Local-Visiteur : Liste des arbitres" + "<br>";
+		    String match = "<br>";
 			for (TupleMatch tupleMatch : list) {
 				match += "Match opposant : "+tupleMatch.nomEquipeVisiteur+" VS "+tupleMatch.nomEquipeLocal+", score final: "+tupleMatch.PointageLocal + "-" + tupleMatch.PointageVisiteur + " : " +tupleMatch.matchDate +" à "+tupleMatch.matchHeure + ". Arbitré par : " + tupleMatch.ListeArbitres + "<br>";
 			}

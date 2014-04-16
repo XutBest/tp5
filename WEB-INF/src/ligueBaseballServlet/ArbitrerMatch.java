@@ -88,7 +88,7 @@ public class ArbitrerMatch extends HttpServlet {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/arbitrermatch.jsp");
 			dispatcher.forward(request, response);
 		} catch (Exception e) {
-			//bad date format
+			System.out.println( e);
 		}
 	}
 
