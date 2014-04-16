@@ -62,13 +62,10 @@ public class ExportXml extends HttpServlet {
 				
 
 				String nomEquipe = request.getParameter("nomEquipe");
-				System.out.println("THIS SHIT IS parameter   " + nomEquipe);
 				GestionLigueBaseball.gestionEquipe.exportXml(nomEquipe);
-				System.out.println("THIS SHIT IS exportXML done");
 				RequestDispatcher dispatcher = request
 						.getRequestDispatcher("/menu.jsp");
 				dispatcher.forward(request, response);
-				System.out.println("THIS SHIT IS load page");
 			}
 		} catch (LigueBaseballException e) {
 			List listeMessageErreur = new LinkedList();

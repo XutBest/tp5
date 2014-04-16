@@ -85,4 +85,9 @@ body {
     padding-right: 0;
     padding-left: 0;
   }
+ header img {
+	width: 100%;
+}
+  
+  
 }

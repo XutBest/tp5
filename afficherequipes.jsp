@@ -1,5 +1,4 @@
 <%@ include file="/WEB-INF/jspf/header.jspf" %> 
-<BR>
 <% 
 GestionLigueBaseball ligueBaseball = (GestionLigueBaseball) session.getAttribute("baseball");
 %>

@@ -24,10 +24,10 @@
 	
 	
 	<BODY>
+		<header>
 		<img src="baseballHeader.jpg" alt="Gestion de ligue de baseball">
-	
-	 
- <div class="btn-group">
+		</header>
+ <div class="navbar btn-group">
   <div class="btn-group">
     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
       Equipes

@@ -24,6 +24,7 @@
 	
 	
 	<BODY>
+		<header>
 		<img src="baseballHeader.jpg" alt="Gestion de ligue de baseball">
-	
+		</header>
 	

@@ -1,5 +1,4 @@
 <%@ include file="/WEB-INF/jspf/header.jspf" %> 
-<BR>
 <FORM ACTION="AfficherResultats" METHOD="POST">
 1.Entrez la date ou l'&#233;quipe: <INPUT TYPE="TEXT" NAME="dateOuEquipe" VALUE="">
 <BR>
